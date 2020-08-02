@@ -1,23 +1,26 @@
 // todo: search input text control
 // todo: master-detail
 // todo: material design
-// todo: edge case - desabilitar navegacion al llegar ultima pagina (y viceversa)
 // todo: edge case - no hay resultados de busqueda
 
 import { useRouter } from 'next/router'
 import withApollo from '../../lib/apollo'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
+import {PageNumberOutOfRange} from "../../components/PageNumberOutOfRange";
 
 
 const GET_MOVIES = gql`
   query AllMovies($searchterm: String!, $page: Int) {
     allMovies(search: $searchterm, page: $page) {
-      results{
+      results {
+        id
+        releaseDate
         title
         posterPath
-        releaseDate
       }
+      page
+      totalPages
     }
   }
 `
@@ -34,13 +37,34 @@ const Page = () => {
 
   const router = useRouter()
   const { searchterm, page } = router.query as {searchterm: string, page: string}
+  const getPageNumber = (page: string): number => !page ? 1 : +page
 
-  const getPageNumber = (page: string): number => !page ? 1 : parseInt(page as string, 10)
-  const goNextPage = () => router.push(`/movies-search/${searchterm}?page=${getPageNumber(page) + 1}`)
-  const goPreviousPage = () => router.push(`/movies-search/${searchterm}?page=${getPageNumber(page) - 1}`)
+  const goNextPage = (currentPage: string, totalPages: string) => {
+    if (!isLastPage(currentPage, totalPages)) {
+      router.push(`/movies-search/${searchterm}?page=${getPageNumber(currentPage) + 1}`)
+    }
+  }
 
-  console.log('router query obj', router.query)
+  const goPreviousPage = (currentPage: string) => {
+    if (!isFirstPage(currentPage)) {
+      router.push(`/movies-search/${searchterm}?page=${getPageNumber(currentPage) - 1}`)
+    }
+  }
 
+  const isPageNumberInRange = (pageNumber: string, totalPages?: string): boolean => {
+    if (pageNumber) {
+      if (+pageNumber < 1) return false
+      if (totalPages) return +pageNumber <= +totalPages
+    }
+    return true
+  }
+
+  const isFirstPage = (currentPage: string) => +currentPage <= 1 || currentPage === undefined
+  const isLastPage = (currentPage: string, totalPages: string) => +currentPage >= +totalPages
+
+  if (!isPageNumberInRange(page)) {
+    return <PageNumberOutOfRange/>
+  }
   const { loading, error, data, fetchMore } = useQuery(GET_MOVIES, {
     variables: {searchterm, page: getPageNumber(page)},
     notifyOnNetworkStatusChange: true
@@ -50,10 +74,12 @@ const Page = () => {
   if (error) return `Error: ${error.message}`
 
   if (data) {
+    const { totalPages, page, results } = data.allMovies
+    if (!isPageNumberInRange(page, totalPages)) return 'Page number out of range'
     return (
       <div>
         {
-          data.allMovies.results.map((movie, index) => {
+          results.map((movie, index) => {
             return (
               <p key={index}>
                 <code>{JSON.stringify(movie)}</code>
@@ -62,16 +88,24 @@ const Page = () => {
           })
         }
         <p>
-          <button onClick={goPreviousPage}>Previous</button>
-          <button onClick={goNextPage}>Next</button>
+          <button onClick={() => goPreviousPage(page)} disabled={isFirstPage(page)}>
+            Previous
+          </button>
+          <button onClick={() => goNextPage(page, totalPages)} disabled={isLastPage(page, totalPages)}>
+            Next
+          </button>
         </p>
+        <div>
+          <div>Current page: { page }</div>
+          <div>Total pages: { totalPages }</div>
+        </div>
         <p>
           <a href="https://tmdb-graphql.com/" target="_blank">
             https://tmdb-graphql.com
           </a>
         </p>
       </div>
-    );
+    )
   }
 
 }
