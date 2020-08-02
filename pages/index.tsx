@@ -24,6 +24,10 @@ export default () => {
         />
       </label>
       <input type="submit" value="Submit" />
+      <p>
+        This app uses "The Movie Database GraphQL API" from&nbsp;
+        <a href="https://tmdb-graphql.com/" target="_blank">https://tmdb-graphql.com</a>
+      </p>
     </form>
   )
 }

@@ -102,11 +102,6 @@ const Page = () => {
           <div>Total pages: { totalPages }</div>
         </div>
         <p>
-          <a href="https://tmdb-graphql.com/" target="_blank">
-            https://tmdb-graphql.com
-          </a>
-        </p>
-        <p>
           <Link href="/"><a>⇦ Back to Home Page</a></Link>
         </p>
       </div>
