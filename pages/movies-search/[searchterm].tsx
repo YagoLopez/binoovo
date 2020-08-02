@@ -51,14 +51,12 @@ const Page = () => {
             )
           })
         }
-
         <Pagination
           page={page}
           totalPages={totalPages}
           searchterm={searchterm}
           getPageNumber={getPageNumber}
         />
-
         <p>
           <Link href="/"><a>⇦ Back to Home Page</a></Link>
         </p>
