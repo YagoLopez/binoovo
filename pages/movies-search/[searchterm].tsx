@@ -7,7 +7,6 @@
 import { useRouter } from 'next/router'
 import withApollo from '../../lib/apollo'
 import { useQuery } from '@apollo/react-hooks'
-import { gql } from 'apollo-boost'
 import { NoResults } from '../../components/NoResults';
 import Link from 'next/link';
 import {CONST} from "../../constants";
