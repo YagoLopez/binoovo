@@ -1,4 +1,3 @@
-// todo: search input text control
 // todo: master-detail
 // todo: material design
 // todo: create footer navigation component
