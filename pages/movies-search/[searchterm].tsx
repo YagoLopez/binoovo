@@ -1,9 +1,9 @@
 // todo: master-detail
 // todo: material design
-// todo: create footer navigation component
 // todo: extract to external files schemas
 // todo: add styles
 // todo: add lazy loading of images
+// todo: tests
 
 import { useRouter } from 'next/router'
 import withApollo from '../../lib/apollo'
@@ -12,6 +12,7 @@ import { gql } from 'apollo-boost'
 import { NoResults } from '../../components/NoResults';
 import Link from 'next/link';
 import {CONST} from "../../constants";
+import {Pagination} from "../../components/Pagination";
 
 const GET_MOVIES = gql`
   query AllMovies($searchterm: String!, $page: Int) {
@@ -42,18 +43,6 @@ const Page = () => {
   const { searchterm, page } = router.query as {searchterm: string, page: string}
   const getPageNumber = (page: string): number => !page ? 1 : +page
 
-  const goNextPage = (currentPage: string, totalPages: string) => {
-    if (!isLastPage(currentPage, totalPages)) {
-      router.push(`/movies-search/${searchterm}?page=${getPageNumber(currentPage) + 1}`)
-    }
-  }
-
-  const goPreviousPage = (currentPage: string) => {
-    if (!isFirstPage(currentPage)) {
-      router.push(`/movies-search/${searchterm}?page=${getPageNumber(currentPage) - 1}`)
-    }
-  }
-
   const isPageNumberInRange = (pageNumber: string, totalPages?: string): boolean => {
     if (pageNumber) {
       if (+pageNumber < 1) return false
@@ -61,9 +50,6 @@ const Page = () => {
     }
     return true
   }
-
-  const isFirstPage = (currentPage: string) => +currentPage <= 1 || currentPage === undefined
-  const isLastPage = (currentPage: string, totalPages: string) => +currentPage >= +totalPages
 
   if (!isPageNumberInRange(page)) return <NoResults message={CONST.PAGE_OUT_RANGE}/>
 
@@ -89,18 +75,14 @@ const Page = () => {
             )
           })
         }
-        <p>
-          <button onClick={() => goPreviousPage(page)} disabled={isFirstPage(page)}>
-            Previous
-          </button>
-          <button onClick={() => goNextPage(page, totalPages)} disabled={isLastPage(page, totalPages)}>
-            Next
-          </button>
-        </p>
-        <div>
-          <div>Current page: { page }</div>
-          <div>Total pages: { totalPages }</div>
-        </div>
+
+        <Pagination
+          page={page}
+          totalPages={totalPages}
+          searchterm={searchterm}
+          getPageNumber={getPageNumber}
+        />
+
         <p>
           <Link href="/"><a>⇦ Back to Home Page</a></Link>
         </p>

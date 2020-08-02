@@ -1,5 +1,6 @@
 import React, {ChangeEvent, FormEvent, useState} from 'react'
 import { useRouter } from 'next/router'
+import {CONST} from "../constants";
 
 export default () => {
 
@@ -16,15 +17,16 @@ export default () => {
   return (
     <form onSubmit={onSearchMovie}>
       <label>
-        <p>Type text to search a movie:</p>
+        <p>Search movie:</p>
         <input
           type="text"
           value={searchterm}
           onChange={(e:ChangeEvent<HTMLInputElement>) => setSearchterm(e.target.value)}
+          placeholder={CONST.SEARCH_MOVIE_PLACEHOLDER}
         />
       </label>
       <input type="submit" value="Submit" />
-      <p>This app uses "The Movie Database GraphQL API" from:</p>
+      <p>This app uses "The Movie Database GraphQL API":</p>
       <a href="https://tmdb-graphql.com/" target="_blank">https://tmdb-graphql.com</a>
     </form>
   )
