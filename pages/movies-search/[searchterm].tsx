@@ -1,14 +1,15 @@
 // todo: search input text control
 // todo: master-detail
 // todo: material design
-// todo: edge case - no hay resultados de busqueda
+// todo: create footer navigation component
+// todo: extract to external files schemas
+// todo: add styles
 
 import { useRouter } from 'next/router'
 import withApollo from '../../lib/apollo'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
-import {PageNumberOutOfRange} from "../../components/PageNumberOutOfRange";
-
+import { NoResults } from "../../components/NoResults";
 
 const GET_MOVIES = gql`
   query AllMovies($searchterm: String!, $page: Int) {
@@ -62,20 +63,19 @@ const Page = () => {
   const isFirstPage = (currentPage: string) => +currentPage <= 1 || currentPage === undefined
   const isLastPage = (currentPage: string, totalPages: string) => +currentPage >= +totalPages
 
-  if (!isPageNumberInRange(page)) {
-    return <PageNumberOutOfRange/>
-  }
+  if (!isPageNumberInRange(page)) return <NoResults message={'Page number out of range'}/>
+
   const { loading, error, data, fetchMore } = useQuery(GET_MOVIES, {
     variables: {searchterm, page: getPageNumber(page)},
     notifyOnNetworkStatusChange: true
   });
 
   if (loading) return <div>Loading...</div>
-  if (error) return `Error: ${error.message}`
-
+  if (error) return <NoResults message={error.message}/>
   if (data) {
     const { totalPages, page, results } = data.allMovies
-    if (!isPageNumberInRange(page, totalPages)) return 'Page number out of range'
+    if (!isPageNumberInRange(page, totalPages)) return <NoResults message={'Page number out of range'}/>
+    if (totalPages === 0) return <NoResults message={'No results found'}/>
     return (
       <div>
         {
@@ -107,7 +107,6 @@ const Page = () => {
       </div>
     )
   }
-
 }
 
 export default withApollo({ ssr: true })(Page)
