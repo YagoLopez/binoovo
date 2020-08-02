@@ -1,8 +1,11 @@
 import withApollo from '../../lib/apollo'
 import { useQuery } from '@apollo/react-hooks'
 import { useRouter } from 'next/router'
-import {GET_MOVIE} from "../../schemas";
-import {NoResults} from "../../components/NoResults";
+import { NoResults } from "../../components/NoResults";
+import { BackHome } from "../../components/BackHome";
+import { BackMovieList } from "../../components/BackMovieList";
+import { Loading } from "../../components/Loading";
+import { GET_MOVIE } from "../../schemas";
 
 const MovieDetail = () => {
 
@@ -14,15 +17,15 @@ const MovieDetail = () => {
     notifyOnNetworkStatusChange: true
   });
 
-  console.log('data', data)
-
-  if (loading) return <div>Loading...</div>
+  if (loading) return <Loading/>
   if (error) return <NoResults message={error.message}/>
 
   if (data) {
     return (
       <div>
         <code>movie: {JSON.stringify(data.movie)}</code>
+        <BackMovieList/>
+        <BackHome/>
       </div>
     )
   }
