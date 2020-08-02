@@ -3,20 +3,21 @@
 // todo: add styles
 // todo: add lazy loading of images
 // todo: tests
+// todo: create movie item component?
 
 import { useRouter } from 'next/router'
 import withApollo from '../../lib/apollo'
 import { useQuery } from '@apollo/react-hooks'
 import { NoResults } from '../../components/NoResults';
 import Link from 'next/link';
-import {CONST} from "../../constants";
 import {Pagination} from "../../components/Pagination";
+import {CONST} from "../../constants";
 import {GET_MOVIES} from "../../schemas";
 
 const Page = () => {
 
   const router = useRouter()
-  const { searchterm, page } = router.query as {searchterm: string, page: string}
+  const { searchterm, page } = router.query as { searchterm: string, page: string }
   const getPageNumber = (page: string): number => !page ? 1 : +page
 
   const isPageNumberInRange = (pageNumber: string, totalPages?: string): boolean => {
@@ -57,9 +58,7 @@ const Page = () => {
           searchterm={searchterm}
           getPageNumber={getPageNumber}
         />
-        <p>
-          <Link href="/"><a>⇦ Back to Home Page</a></Link>
-        </p>
+        <p><Link href="/"><a>⇦ Back to Home Page</a></Link></p>
       </div>
     )
   }

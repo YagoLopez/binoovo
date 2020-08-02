@@ -14,3 +14,24 @@ export const GET_MOVIES = gql`
     }
   }
 `
+
+export const GET_MOVIE = gql`
+  query ($id: ID!){
+    movie(id: $id) {
+      overview
+      cast {
+        name
+      }
+      genres {
+        name
+      }
+      posterPath
+      releaseDate
+      revenue
+      title
+      videos {
+        key
+      }
+    }
+  }
+`
