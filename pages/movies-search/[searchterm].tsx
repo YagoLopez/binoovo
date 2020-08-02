@@ -4,12 +4,14 @@
 // todo: create footer navigation component
 // todo: extract to external files schemas
 // todo: add styles
+// todo: add lazy loading of images
 
 import { useRouter } from 'next/router'
 import withApollo from '../../lib/apollo'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
-import { NoResults } from "../../components/NoResults";
+import { NoResults } from '../../components/NoResults';
+import Link from 'next/link';
 
 const GET_MOVIES = gql`
   query AllMovies($searchterm: String!, $page: Int) {
@@ -103,6 +105,9 @@ const Page = () => {
           <a href="https://tmdb-graphql.com/" target="_blank">
             https://tmdb-graphql.com
           </a>
+        </p>
+        <p>
+          <Link href="/"><a>⇦ Back to Home Page</a></Link>
         </p>
       </div>
     )
