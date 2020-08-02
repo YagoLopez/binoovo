@@ -1,3 +1,8 @@
+// todo: paginación
+// todo: search input text control
+// todo: master-detail
+// todo: material design
+
 import withApollo from '../lib/apollo'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
