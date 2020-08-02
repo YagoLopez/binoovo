@@ -1,6 +1,5 @@
 // todo: master-detail
 // todo: material design
-// todo: extract to external files schemas
 // todo: add styles
 // todo: add lazy loading of images
 // todo: tests
@@ -13,29 +12,7 @@ import { NoResults } from '../../components/NoResults';
 import Link from 'next/link';
 import {CONST} from "../../constants";
 import {Pagination} from "../../components/Pagination";
-
-const GET_MOVIES = gql`
-  query AllMovies($searchterm: String!, $page: Int) {
-    allMovies(search: $searchterm, page: $page) {
-      results {
-        id
-        releaseDate
-        title
-        posterPath
-      }
-      page
-      totalPages
-    }
-  }
-`
-
-const GET_TOTAL_RESULT = gql`
-  query {
-    allMovies{
-      totalResults
-    }
-  }
-`
+import {GET_MOVIES} from "../../schemas";
 
 const Page = () => {
 
