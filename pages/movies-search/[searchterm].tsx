@@ -11,6 +11,7 @@ import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 import { NoResults } from '../../components/NoResults';
 import Link from 'next/link';
+import {CONST} from "../../constants";
 
 const GET_MOVIES = gql`
   query AllMovies($searchterm: String!, $page: Int) {
@@ -64,7 +65,7 @@ const Page = () => {
   const isFirstPage = (currentPage: string) => +currentPage <= 1 || currentPage === undefined
   const isLastPage = (currentPage: string, totalPages: string) => +currentPage >= +totalPages
 
-  if (!isPageNumberInRange(page)) return <NoResults message={'Page number out of range'}/>
+  if (!isPageNumberInRange(page)) return <NoResults message={CONST.PAGE_OUT_RANGE}/>
 
   const { loading, error, data, fetchMore } = useQuery(GET_MOVIES, {
     variables: {searchterm, page: getPageNumber(page)},
@@ -75,8 +76,8 @@ const Page = () => {
   if (error) return <NoResults message={error.message}/>
   if (data) {
     const { totalPages, page, results } = data.allMovies
-    if (!isPageNumberInRange(page, totalPages)) return <NoResults message={'Page number out of range'}/>
-    if (totalPages === 0) return <NoResults message={'No results found'}/>
+    if (!isPageNumberInRange(page, totalPages)) return <NoResults message={CONST.PAGE_OUT_RANGE}/>
+    if (totalPages === 0) return <NoResults message={CONST.NO_RESULTS}/>
     return (
       <div>
         {
