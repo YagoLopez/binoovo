@@ -49,7 +49,7 @@ const Page = () => {
   if (loading) return <div>Loading...</div>
   if (error) return `Error: ${error.message}`
 
-  if (data?.allMovies?.results) {
+  if (data) {
     return (
       <div>
         {
