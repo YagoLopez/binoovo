@@ -23,7 +23,7 @@ export const TopBar = ({ title, goBackPath, showHomeIcon }: TopBarProps) => {
         {
           goBackPath &&
             <Link href={goBackPath}>
-              <a title="Back to Home Page"><TopAppBarNavigationIcon icon="arrow_back"/></a>
+              <a title="Go Back"><TopAppBarNavigationIcon icon="arrow_back"/></a>
             </Link>
         }
           <TopAppBarTitle>{ title }</TopAppBarTitle>
@@ -31,7 +31,7 @@ export const TopBar = ({ title, goBackPath, showHomeIcon }: TopBarProps) => {
         {
           showHomeIcon &&
             <TopAppBarSection alignEnd>
-              <TopAppBarActionItem icon="home" />
+              <TopAppBarActionItem icon="home" title="Return to Home Page" />
             </TopAppBarSection>
         }
       </TopAppBarRow>
