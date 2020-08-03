@@ -12,6 +12,12 @@ export const GET_MOVIES = gql`
       page
       totalPages
     }
+    configuration {
+      images {
+        baseUrl
+        posterSizes
+      }
+    }
   }
 `
 
@@ -31,6 +37,12 @@ export const GET_MOVIE = gql`
       title
       videos {
         key
+      }
+    }
+    configuration {
+      images {
+        baseUrl
+        posterSizes
       }
     }
   }
