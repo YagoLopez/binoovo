@@ -1,8 +1,8 @@
-import {MovieItem} from "./MovieItem";
+import {MovieListItem} from "./MovieListItem";
 
 export const MovieList = ({ listData, imageData }) =>
   listData.map((movie, index) =>
-    <MovieItem
+    <MovieListItem
       key={index}
       movieData={movie}
       baseUrl={imageData.baseUrl}

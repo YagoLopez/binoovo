@@ -6,7 +6,7 @@ import {
   TopAppBarRow,
   TopAppBarSection,
   TopAppBarTitle
-} from "@rmwc/top-app-bar";
+} from '@rmwc/top-app-bar'
 
 interface TopBarProps {
   title?: string,
@@ -23,7 +23,7 @@ export const TopBar = ({ title, goBackPath, showHomeIcon }: TopBarProps) => {
         {
           goBackPath &&
             <Link href={goBackPath}>
-              <a><TopAppBarNavigationIcon icon="arrow_back"/></a>
+              <a title="Back to Home Page"><TopAppBarNavigationIcon icon="arrow_back"/></a>
             </Link>
         }
           <TopAppBarTitle>{ title }</TopAppBarTitle>

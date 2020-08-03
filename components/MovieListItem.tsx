@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export const MovieItem = ({ movieData, baseUrl, imgSize }) => {
+export const MovieListItem = ({ movieData, baseUrl, imgSize }) => {
   console.log('movie image', baseUrl + imgSize + movieData.posterPath)
   return (
     <p>
