@@ -1,4 +1,3 @@
-// todo: find out img basePath
 // todo: material design
 // todo: add styles
 // todo: add lazy loading of images
