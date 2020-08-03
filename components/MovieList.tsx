@@ -1,11 +1,16 @@
 import {MovieListItem} from "./MovieListItem";
+import {List, ListDivider, ListGroup} from "@rmwc/list";
 
 export const MovieList = ({ listData, imageData }) =>
-  listData.map((movie, index) =>
-    <MovieListItem
-      key={index}
-      movieData={movie}
-      baseUrl={imageData.baseUrl}
-      imgSize={imageData.posterSizes[0]}
-    />
+  listData.map((movie, index) => (
+    <List twoLine avatarList key={index}>
+      <ListGroup>
+        <MovieListItem
+          movieData={movie}
+          baseUrl={imageData.baseUrl}
+          imgSize={imageData.posterSizes[0]}
+        />
+      </ListGroup>
+    </List>
+    )
   )
