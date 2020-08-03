@@ -12,6 +12,7 @@ import { Loading } from '../../components/Loading'
 import { TopBar } from "../../components/TopBar";
 import { CONST } from '../../constants'
 import { GET_MOVIES } from '../../schemas'
+import { LinearProgress } from '@rmwc/linear-progress'
 
 const Page = () => {
 
@@ -35,7 +36,7 @@ const Page = () => {
     notifyOnNetworkStatusChange: true
   });
 
-  if (loading) return <Loading/>
+  if (loading) return <LinearProgress/>
   if (error) return <NoResults message={error.message}/>
   if (data) {
     console.log('data', data)

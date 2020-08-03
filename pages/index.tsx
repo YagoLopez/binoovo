@@ -4,7 +4,7 @@ import { TopBar } from '../components/TopBar'
 import { CONST } from '../constants';
 import { LinearProgress } from '@rmwc/linear-progress'
 import styles from '../public/styles.module.css'
-import { Typography } from "@rmwc/typography";
+import { Typography } from '@rmwc/typography'
 
 export default () => {
 

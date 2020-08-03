@@ -5,6 +5,7 @@ import { NoResults } from "../../components/NoResults";
 import { BackMovieList } from "../../components/BackMovieList";
 import { Loading } from "../../components/Loading";
 import { GET_MOVIE } from "../../schemas";
+import { LinearProgress } from '@rmwc/linear-progress'
 
 const MovieDetail = () => {
 
@@ -17,7 +18,7 @@ const MovieDetail = () => {
     notifyOnNetworkStatusChange: true
   });
 
-  if (loading) return <Loading/>
+  if (loading) return <LinearProgress/>
   if (error) return <NoResults message={error.message}/>
 
   if (data) {
