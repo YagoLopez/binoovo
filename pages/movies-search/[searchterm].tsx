@@ -31,6 +31,7 @@ const Page = () => {
 
   if (!isPageNumberInRange(page)) return <NoResults message={CONST.PAGE_OUT_RANGE}/>
 
+  // Execute graphql query to search movies
   const { loading, error, data } = useQuery(GET_MOVIES, {
     variables: {searchterm, page: getPageNumber(page)},
     notifyOnNetworkStatusChange: true

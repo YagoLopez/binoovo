@@ -12,6 +12,7 @@ const MovieDetail = () => {
   const router = useRouter()
   const { id } = router.query as { id: string }
 
+  // Executes qraphql query to get movie details by id
   const { loading, error, data, fetchMore } = useQuery(GET_MOVIE, {
     variables: { id },
     notifyOnNetworkStatusChange: true
