@@ -9,7 +9,7 @@ class MyDocument extends Document {
           <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
           <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         </Head>
-        <body style={{margin: 0}}>
+        <body style={{margin: 0}} className="mdc-typography">
           <Main />
           <NextScript />
         </body>
