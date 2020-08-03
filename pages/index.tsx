@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import { useRouter } from 'next/router'
 import { TopBar } from "../components/TopBar";
 import { CONST } from "../constants";
+import {LinearProgress} from "@rmwc/linear-progress";
 
 export default () => {
 
@@ -12,12 +13,16 @@ export default () => {
   const onSearchMovie = (evt: FormEvent) => {
     evt.preventDefault()
     searchterm.trim()
-    searchterm?.length > 0 && router.push(`/movies-search/${searchterm}?page=1`)
+    if (searchterm?.length > 0) {
+      setIsLoading(true)
+      router.push(`/movies-search/${searchterm}?page=1`)
+    }
   }
 
   return (
     <form onSubmit={onSearchMovie}>
-      <TopBar title={'Binoovo Movies Search'} />
+      <TopBar title={'Binoovo Movie Search'} />
+      {isLoading && <LinearProgress />}
       <label>
         <div>
           <div>Search movie:</div>
