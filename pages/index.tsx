@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { useRouter } from 'next/router'
-import {TopBar} from "../components/TopBar";
+import { TopBar } from "../components/TopBar";
 import { CONST } from "../constants";
 
 export default () => {
