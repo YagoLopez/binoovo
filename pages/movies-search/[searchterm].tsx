@@ -10,17 +10,18 @@ import { Pagination } from '../../components/Pagination'
 import { MovieList } from '../../components/MovieList'
 import { BackHome } from '../../components/BackHome'
 import { Loading } from '../../components/Loading'
+import { TopBar } from "../../components/TopBar";
 import { CONST } from '../../constants'
 import { GET_MOVIES } from '../../schemas'
-import {
-  TopAppBar,
-  TopAppBarActionItem,
-  TopAppBarFixedAdjust,
-  TopAppBarNavigationIcon,
-  TopAppBarRow,
-  TopAppBarSection,
-  TopAppBarTitle
-} from '@rmwc/top-app-bar'
+// import {
+//   TopAppBar,
+//   TopAppBarActionItem,
+//   TopAppBarFixedAdjust,
+//   TopAppBarNavigationIcon,
+//   TopAppBarRow,
+//   TopAppBarSection,
+//   TopAppBarTitle
+// } from '@rmwc/top-app-bar'
 
 
 const Page = () => {
@@ -55,18 +56,7 @@ const Page = () => {
     if (totalPages === 0) return <NoResults message={CONST.NO_RESULTS}/>
     return (
       <>
-        <TopAppBar fixed>
-          <TopAppBarRow>
-            <TopAppBarSection alignStart>
-              <TopAppBarNavigationIcon icon="arrow_back" />
-              <TopAppBarTitle>Movie Search Results</TopAppBarTitle>
-            </TopAppBarSection>
-            <TopAppBarSection alignEnd>
-              <TopAppBarActionItem icon="home" />
-            </TopAppBarSection>
-          </TopAppBarRow>
-        </TopAppBar>
-        <TopAppBarFixedAdjust />
+        <TopBar goBackPath={'/'} title={'Movies Search List'} />
         <MovieList
           listData={results}
           imageData={images}
