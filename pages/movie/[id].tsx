@@ -2,7 +2,6 @@ import withApollo from '../../lib/apollo'
 import { useQuery } from '@apollo/react-hooks'
 import { useRouter } from 'next/router'
 import { NoResults } from "../../components/NoResults";
-import { BackHome } from "../../components/BackHome";
 import { BackMovieList } from "../../components/BackMovieList";
 import { Loading } from "../../components/Loading";
 import { GET_MOVIE } from "../../schemas";
@@ -27,7 +26,6 @@ const MovieDetail = () => {
       <div>
         <code>movie: {JSON.stringify(data.movie)}</code>
         <BackMovieList/>
-        <BackHome/>
       </div>
     )
   }

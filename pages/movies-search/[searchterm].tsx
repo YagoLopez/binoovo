@@ -8,7 +8,6 @@ import { useQuery } from '@apollo/react-hooks'
 import { NoResults } from '../../components/NoResults'
 import { Pagination } from '../../components/Pagination'
 import { MovieList } from '../../components/MovieList'
-import { BackHome } from '../../components/BackHome'
 import { Loading } from '../../components/Loading'
 import { TopBar } from "../../components/TopBar";
 import { CONST } from '../../constants'
@@ -54,7 +53,6 @@ const Page = () => {
           searchterm={searchterm}
           getPageNumber={getPageNumber}
         />
-        <BackHome/>
       </>
     )
   }
