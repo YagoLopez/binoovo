@@ -6,8 +6,8 @@ import { CONST } from "../constants";
 export default () => {
 
   const router = useRouter()
-
   const [searchterm, setSearchterm] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const onSearchMovie = (evt: FormEvent) => {
     evt.preventDefault()

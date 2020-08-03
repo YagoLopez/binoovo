@@ -1,0 +1,9 @@
+.page {
+  padding: 25px;
+}
+
+.center-hor-ver {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
