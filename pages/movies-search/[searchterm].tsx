@@ -1,3 +1,6 @@
+// todo: material design in movie detail
+// todo: fail img
+// todo: responsive layout
 // todo: add styles
 // todo: add lazy loading of images
 // todo: tests
@@ -8,7 +11,6 @@ import { useQuery } from '@apollo/react-hooks'
 import { NoResults } from '../../components/NoResults'
 import { Pagination } from '../../components/Pagination'
 import { MovieList } from '../../components/MovieList'
-import { Loading } from '../../components/Loading'
 import { TopBar } from "../../components/TopBar";
 import { CONST } from '../../constants'
 import { GET_MOVIES } from '../../schemas'
