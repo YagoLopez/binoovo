@@ -13,16 +13,6 @@ import { Loading } from '../../components/Loading'
 import { TopBar } from "../../components/TopBar";
 import { CONST } from '../../constants'
 import { GET_MOVIES } from '../../schemas'
-// import {
-//   TopAppBar,
-//   TopAppBarActionItem,
-//   TopAppBarFixedAdjust,
-//   TopAppBarNavigationIcon,
-//   TopAppBarRow,
-//   TopAppBarSection,
-//   TopAppBarTitle
-// } from '@rmwc/top-app-bar'
-
 
 const Page = () => {
 
@@ -56,11 +46,8 @@ const Page = () => {
     if (totalPages === 0) return <NoResults message={CONST.NO_RESULTS}/>
     return (
       <>
-        <TopBar goBackPath={'/'} title={'Movies Search List'} />
-        <MovieList
-          listData={results}
-          imageData={images}
-        />
+        <TopBar goBackPath={'/'} title={'Movies Search Results'} />
+        <MovieList listData={results} imageData={images}/>
         <Pagination
           page={page}
           totalPages={totalPages}

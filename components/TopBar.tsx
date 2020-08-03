@@ -9,8 +9,8 @@ import {
 } from "@rmwc/top-app-bar";
 
 interface TopBarProps {
-  title: string,
-  goBackPath: string,
+  title?: string,
+  goBackPath?: string,
   showHomeIcon?: boolean,
 }
 
@@ -18,7 +18,7 @@ export const TopBar = ({ title, goBackPath, showHomeIcon }: TopBarProps) => {
   return (
     <>
       <TopAppBar fixed>
-      <TopAppBarRow>
+        <TopAppBarRow>
         <TopAppBarSection alignStart>
         {
           goBackPath &&
@@ -35,7 +35,7 @@ export const TopBar = ({ title, goBackPath, showHomeIcon }: TopBarProps) => {
             </TopAppBarSection>
         }
       </TopAppBarRow>
-    </TopAppBar>
+      </TopAppBar>
       <TopAppBarFixedAdjust />
     </>
   )

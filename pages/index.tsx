@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { useRouter } from 'next/router'
+import {TopBar} from "../components/TopBar";
 import { CONST } from "../constants";
 
 export default () => {
@@ -16,6 +17,7 @@ export default () => {
 
   return (
     <form onSubmit={onSearchMovie}>
+      <TopBar title={'Binoovo Movies Search'} />
       <label>
         <div>
           <div>Search movie:</div>
