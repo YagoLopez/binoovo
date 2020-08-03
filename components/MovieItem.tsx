@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
-export const MovieItem = ({ movieData }) => {
+export const MovieItem = ({ movieData, baseUrl, imgSize }) => {
+  console.log('movie image', baseUrl + imgSize + movieData.posterPath)
   return (
     <p>
       <Link href="/movie/[id]" as={`/movie/${movieData.id}`}>

@@ -22,6 +22,7 @@ const MovieDetail = () => {
   if (error) return <NoResults message={error.message}/>
 
   if (data) {
+    console.log('movie detail', data)
     return (
       <div>
         <code>movie: {JSON.stringify(data.movie)}</code>
