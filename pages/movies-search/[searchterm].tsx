@@ -1,4 +1,3 @@
-// todo: material design
 // todo: add styles
 // todo: add lazy loading of images
 // todo: tests
@@ -6,13 +5,23 @@
 import withApollo from '../../lib/apollo'
 import { useRouter } from 'next/router'
 import { useQuery } from '@apollo/react-hooks'
-import { NoResults } from '../../components/NoResults';
-import { Pagination } from "../../components/Pagination";
-import { MovieList } from "../../components/MovieList";
-import { BackHome } from "../../components/BackHome";
-import { Loading } from "../../components/Loading";
-import { CONST } from "../../constants";
-import { GET_MOVIES } from "../../schemas";
+import { NoResults } from '../../components/NoResults'
+import { Pagination } from '../../components/Pagination'
+import { MovieList } from '../../components/MovieList'
+import { BackHome } from '../../components/BackHome'
+import { Loading } from '../../components/Loading'
+import { CONST } from '../../constants'
+import { GET_MOVIES } from '../../schemas'
+import {
+  TopAppBar,
+  TopAppBarActionItem,
+  TopAppBarFixedAdjust,
+  TopAppBarNavigationIcon,
+  TopAppBarRow,
+  TopAppBarSection,
+  TopAppBarTitle
+} from '@rmwc/top-app-bar'
+
 
 const Page = () => {
 
@@ -46,6 +55,18 @@ const Page = () => {
     if (totalPages === 0) return <NoResults message={CONST.NO_RESULTS}/>
     return (
       <>
+        <TopAppBar fixed>
+          <TopAppBarRow>
+            <TopAppBarSection alignStart>
+              <TopAppBarNavigationIcon icon="arrow_back" />
+              <TopAppBarTitle>Movie Search Results</TopAppBarTitle>
+            </TopAppBarSection>
+            <TopAppBarSection alignEnd>
+              <TopAppBarActionItem icon="home" />
+            </TopAppBarSection>
+          </TopAppBarRow>
+        </TopAppBar>
+        <TopAppBarFixedAdjust />
         <MovieList
           listData={results}
           imageData={images}
