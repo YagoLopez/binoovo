@@ -31,7 +31,7 @@ export default () => {
         <label>
           <div className={styles.blockText}>
             <div><Typography use="headline6">🎞️ Search Movie</Typography></div>
-            <div><Typography use="body1">For example: "Alien"</Typography></div>
+            <div><Typography use="body1">For example: "Contact"</Typography></div>
           </div>
           <TextField
             icon="search"

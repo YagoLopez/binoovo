@@ -18,10 +18,7 @@ interface TopBarProps {
 export const TopBar = ({ title, showBackBtn, showHomeBtn }: TopBarProps) => {
 
   const router = useRouter()
-
-  const goBack = () => {
-    router.back()
-  }
+  const goBack = () => router.back()
 
   return (
     <>

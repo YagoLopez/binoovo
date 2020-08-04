@@ -12,7 +12,7 @@ import {
   CardPrimaryAction
 } from '@rmwc/card'
 import { Typography } from '@rmwc/typography'
-import styles from '../../public/styles.module.css'
+import css from '../../public/styles.module.css'
 import { TopBar } from '../../components/TopBar'
 import { getCardMedia, getVideoBtn } from "./movie.service";
 
@@ -21,7 +21,6 @@ const MovieDetail = () => {
 
   const router = useRouter()
   const { id } = router.query as { id: string, asPath: string }
-
 
   // Executes qraphql query to get movie details by id
   const { loading, error, data } = useQuery(GET_MOVIE, {
@@ -34,22 +33,22 @@ const MovieDetail = () => {
 
   if (data) {
     const { baseUrl, posterSizes } = data.configuration.images
-    const { genres, overview, posterPath, releaseDate, title, videos } = data.movie
+    const { overview, posterPath, releaseDate, title, videos } = data.movie
 
     return (
       <>
         <TopBar title={'Movie Details'} showBackBtn={true} showHomeBtn={true}/>
-        <div className={styles.movieDetailPage}>
-          <Card style={{ width: '25rem' }}>
+        <div className={css.movieDetailPage}>
+          <Card className={css.movieCard}>
             <CardPrimaryAction>
               { getCardMedia(posterPath, baseUrl, posterSizes) }
-              <div style={{ padding: '0 1rem 1rem 1rem' }}>
+              <div className={css.movieCardContent}>
                 <Typography use="headline6" tag="h2">{ title }</Typography>
                 <Typography
                   use="subtitle2"
                   tag="h3"
                   theme="textSecondaryOnBackground"
-                  style={{ marginTop: '-1rem' }}
+                  className={css.movieCardSubtitle}
                 >
                   Release date: { releaseDate }
                 </Typography>

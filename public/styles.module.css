@@ -52,5 +52,13 @@
 }
 
 .movieCard {
+  width: 25rem;
+}
 
+.movieCardContent {
+  padding: 0 1rem 1rem 1rem;
+}
+
+.movieCardSubtitle {
+  margin-top: -1rem;
 }
