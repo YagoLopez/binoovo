@@ -1,6 +1,4 @@
 // todo: responsive layout
-// todo: add styles
-// todo: add lazy loading of images
 // todo: tests
 
 import withApollo from '../../lib/apollo'
