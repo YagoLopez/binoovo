@@ -57,7 +57,7 @@ export default () => {
             <Typography use="caption">This app uses "The Movie Database GraphQL API":</Typography>
           </div>
           <div>
-            <a href="https://tmdb-graphql.com/" target="_blank" className={styles.link}>
+            <a href="https://tmdb-graphql.com/" target="_blank" className={styles.link} rel="noopener">
               https://tmdb-graphql.com
             </a>
           </div>

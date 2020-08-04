@@ -16,7 +16,7 @@ export const getCardMedia = (posterPath: string, baseUrl: string, posterSizes: s
 
 export const getVideoBtn = (videos: {key: string, any}[]) => (
   videos.length > 0 &&
-    <a href={getVideoUrl(videos[0]?.key)} target="_blank">
+    <a href={getVideoUrl(videos[0]?.key)} target="_blank" rel="noopener">
       <CardActionButton raised>Watch Video</CardActionButton>
     </a>
 )
