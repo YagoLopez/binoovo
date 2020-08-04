@@ -13,20 +13,12 @@ import { TopBar } from "../../components/TopBar";
 import { CONST } from '../../constants'
 import { GET_MOVIES } from '../../schemas'
 import { LinearProgress } from '@rmwc/linear-progress'
+import { getPageNumber, isPageNumberInRange } from './search.service'
 
 const Page = () => {
 
   const router = useRouter()
   const { searchterm, page } = router.query as { searchterm: string, page: string }
-  const getPageNumber = (page: string): number => !page ? 1 : +page
-
-  const isPageNumberInRange = (pageNumber: string, totalPages?: string): boolean => {
-    if (pageNumber) {
-      if (+pageNumber < 1) return false
-      if (totalPages) return +pageNumber <= +totalPages
-    }
-    return true
-  }
 
   if (!isPageNumberInRange(page)) return <NoResults message={CONST.PAGE_OUT_RANGE}/>
 
