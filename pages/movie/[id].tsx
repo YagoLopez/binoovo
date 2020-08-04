@@ -6,16 +6,15 @@ import { GET_MOVIE } from "../../schemas";
 import { LinearProgress } from '@rmwc/linear-progress'
 import {
   Card,
-  CardActionButton,
   CardActionButtons, CardActionIcon,
   CardActionIcons,
   CardActions,
-  CardMedia,
   CardPrimaryAction
 } from '@rmwc/card'
 import { Typography } from '@rmwc/typography'
 import styles from '../../public/styles.module.css'
 import { TopBar } from '../../components/TopBar'
+import { getCardMedia, getVideoBtn } from "./movie.service";
 
 
 const MovieDetail = () => {
@@ -23,10 +22,6 @@ const MovieDetail = () => {
   const router = useRouter()
   const { id } = router.query as { id: string, asPath: string }
 
-  const getImageUrl = (baseUrl: string, imgSize: string, posterPath: string): string => {
-    if (!posterPath) return ''
-    return baseUrl + imgSize + posterPath
-  }
 
   // Executes qraphql query to get movie details by id
   const { loading, error, data } = useQuery(GET_MOVIE, {
@@ -47,10 +42,7 @@ const MovieDetail = () => {
         <div className={styles.movieDetailPage}>
           <Card style={{ width: '25rem' }}>
             <CardPrimaryAction>
-              <CardMedia
-                square
-                style={{backgroundImage: `url(${getImageUrl(baseUrl, posterSizes[2], posterPath)})`}}
-              />
+              { getCardMedia(posterPath, baseUrl, posterSizes) }
               <div style={{ padding: '0 1rem 1rem 1rem' }}>
                 <Typography use="headline6" tag="h2">{ title }</Typography>
                 <Typography
@@ -72,8 +64,7 @@ const MovieDetail = () => {
             </CardPrimaryAction>
             <CardActions>
               <CardActionButtons>
-                <CardActionButton>Read</CardActionButton>
-                <CardActionButton>Bookmark</CardActionButton>
+                { getVideoBtn(videos) }
               </CardActionButtons>
               <CardActionIcons>
                 <CardActionIcon onIcon="favorite" icon="favorite_border" />
