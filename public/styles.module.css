@@ -63,3 +63,18 @@
 .movieCardSubtitle {
   margin-top: -1rem;
 }
+
+.paginationBtn {
+  margin: 1rem;
+}
+
+.paginationFooter {
+  padding: 2px;
+}
+
+.paginationCentered {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
