@@ -1,5 +1,3 @@
-// todo: material design in movie detail
-// todo: fail img
 // todo: responsive layout
 // todo: add styles
 // todo: add lazy loading of images
@@ -48,7 +46,7 @@ const Page = () => {
     if (totalPages === 0) return <NoResults message={CONST.NO_RESULTS}/>
     return (
       <>
-        <TopBar goBackPath={'/'} title={'Movies Search Results'} />
+        <TopBar title={'Movies Search Results'} showBackBtn={true} showHomeBtn={true} />
         <MovieList listData={results} imageData={images}/>
         <Pagination
           page={page}
