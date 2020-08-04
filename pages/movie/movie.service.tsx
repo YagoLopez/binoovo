@@ -20,3 +20,5 @@ export const getVideoBtn = (videos: {key: string, any}[]) => (
       <CardActionButton raised>Watch Video</CardActionButton>
     </a>
 )
+
+export default () => 'Movie Service'
