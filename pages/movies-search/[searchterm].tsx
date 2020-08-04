@@ -33,13 +33,15 @@ const Page = () => {
     return (
       <>
         <TopBar title={'Movies Search Results'} showBackBtn={true} showHomeBtn={true} />
-        <MovieList listData={results} imageData={images}/>
-        <Pagination
-          page={page}
-          totalPages={totalPages}
-          searchterm={searchterm}
-          getPageNumber={getPageNumber}
-        />
+        <div className="responsive-card">
+          <MovieList listData={results} imageData={images}/>
+          <Pagination
+            page={page}
+            totalPages={totalPages}
+            searchterm={searchterm}
+            getPageNumber={getPageNumber}
+          />
+        </div>
       </>
     )
   }

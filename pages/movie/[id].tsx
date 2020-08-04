@@ -39,7 +39,7 @@ const MovieDetail = () => {
       <>
         <TopBar title={'Movie Details'} showBackBtn={true} showHomeBtn={true}/>
         <div className={css.movieDetailPage}>
-          <Card className={css.movieCard}>
+          <Card className="movieCard">
             <CardPrimaryAction>
               { getCardMedia(posterPath, baseUrl, posterSizes) }
               <div className={css.movieCardContent}>

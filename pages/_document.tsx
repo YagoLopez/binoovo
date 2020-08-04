@@ -6,6 +6,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link href="/material-components-web.min.css" rel="stylesheet" />
+          <link href="/responsive.css" rel="stylesheet" />
           <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
           <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         </Head>

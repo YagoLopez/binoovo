@@ -1,0 +1,25 @@
+.movieCard {
+  width: 25rem;
+  margin-bottom: 3rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .responsive-card {
+    width: 65%;
+    margin: 45px auto 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e3e4e6;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow:
+      0 2.5px 5.4px rgba(0, 0, 0, 0.042),
+      0 2.5px 24px rgba(0, 0, 0, 0.07);
+  }
+
+  .movieCard {
+    min-width: 400px;
+    width: 35%;
+  }
+
+}
