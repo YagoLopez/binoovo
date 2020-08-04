@@ -1,6 +1,8 @@
 # Binoovo Technical Exercise
 
-## Features 🛠️
+Consume the https://www.themoviedb.org/documentation/api API using GraphQL https://tmdb-graphql.com
+
+## Features
 
 - EcmaScript 6 (ES6)
 
@@ -21,11 +23,11 @@
 - Mobile first Responsive design
 
 
-## Demo 🖥
+## Demo
 
 - https://binoovo.vercel.app/
 
-## Run and build ⚙
+## Run and build
 
 ```bash
 # install dependencies
@@ -49,7 +51,6 @@ npm run start
 yarn start
 ```
 
-## Endpoints
 
 
 
