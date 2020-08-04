@@ -1,6 +1,3 @@
-// todo: responsive layout
-// todo: tests
-
 import withApollo from '../../lib/apollo'
 import { useRouter } from 'next/router'
 import { useQuery } from '@apollo/react-hooks'
