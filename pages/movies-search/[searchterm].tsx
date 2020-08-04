@@ -29,7 +29,6 @@ const Page = () => {
   if (loading) return <LinearProgress/>
   if (error) return <NoResults message={error.message}/>
   if (data) {
-    console.log('data', data)
     const { totalPages, page, results } = data.allMovies
     const { images } = data.configuration
     if (!isPageNumberInRange(page, totalPages)) return <NoResults message={CONST.PAGE_OUT_RANGE}/>
