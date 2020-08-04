@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:test": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
     "cypress": "npx cypress open",
-    "test": "run-p dev cypress"
+    "test": "run-p dev:test cypress"
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
