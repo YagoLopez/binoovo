@@ -1,6 +1,6 @@
 # Binoovo Technical Exercise
 
-Consume the https://www.themoviedb.org/documentation/api API using GraphQL https://tmdb-graphql.com
+This app consumes the https://www.themoviedb.org/documentation/api API using GraphQL https://tmdb-graphql.com
 
 ## Features
 
