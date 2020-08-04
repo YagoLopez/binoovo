@@ -7,5 +7,3 @@ export const isPageNumberInRange = (pageNumber: string, totalPages?: string): bo
   }
   return true
 }
-
-export default () => 'Search Service'

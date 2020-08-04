@@ -14,7 +14,7 @@ import {
 import { Typography } from '@rmwc/typography'
 import css from '../../public/styles.module.css'
 import { TopBar } from '../../components/TopBar'
-import { getCardMedia, getVideoBtn } from "./movie.service";
+import { getCardMedia, getVideoBtn, onAddFavorite } from '../../services/movie.service'
 
 
 const MovieDetail = () => {
@@ -48,27 +48,17 @@ const MovieDetail = () => {
                   use="subtitle2"
                   tag="h3"
                   theme="textSecondaryOnBackground"
-                  className={css.movieCardSubtitle}
-                >
-                  Release date: { releaseDate }
-                </Typography>
+                  className={css.movieCardSubtitle}>Release date: { releaseDate }</Typography>
                 <Typography
                   use="body1"
                   tag="div"
-                  theme="textSecondaryOnBackground"
-                >
-                  { overview }
-                </Typography>
+                  theme="textSecondaryOnBackground">{ overview }</Typography>
               </div>
             </CardPrimaryAction>
             <CardActions>
-              <CardActionButtons>
-                { getVideoBtn(videos) }
-              </CardActionButtons>
+              <CardActionButtons>{ getVideoBtn(videos) }</CardActionButtons>
               <CardActionIcons>
-                <CardActionIcon onIcon="favorite" icon="favorite_border" />
-                <CardActionIcon icon="share" />
-                <CardActionIcon icon="more_vert" />
+                <CardActionIcon onIcon="favorite" icon="favorite_border" onClick={onAddFavorite} />
               </CardActionIcons>
             </CardActions>
           </Card>

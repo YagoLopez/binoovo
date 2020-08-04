@@ -21,4 +21,6 @@ export const getVideoBtn = (videos: {key: string, any}[]) => (
     </a>
 )
 
-export default () => 'Movie Service'
+export const onAddFavorite = () => {
+  alert('Movie added to favorites (Simulation)')
+}
