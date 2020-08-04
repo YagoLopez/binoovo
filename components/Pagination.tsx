@@ -30,8 +30,9 @@ export const Pagination = ({ page, totalPages, searchterm, getPageNumber }) => {
       <div>
         { isLoading && <LinearProgress progress={0} /> }
         <Button
-          className={css.paginationBtn}
           raised
+          data-cy="prev-btn"
+          className={css.paginationBtn}
           label="Prev Page"
           icon="keyboard_arrow_left"
           onClick={() => goPreviousPage(page)}
@@ -40,6 +41,7 @@ export const Pagination = ({ page, totalPages, searchterm, getPageNumber }) => {
         />
         <Button
           raised
+          data-cy="next-btn"
           className={css.paginationBtn}
           label="Next Page"
           trailingIcon="keyboard_arrow_right"
@@ -49,8 +51,12 @@ export const Pagination = ({ page, totalPages, searchterm, getPageNumber }) => {
         />
       </div>
       <div>
-        <div className={css.paginationFooter}>Current page: {page}</div>
-        <div className={css.paginationFooter}>Total pages: {totalPages}</div>
+        <div data-cy="current-page" className={css.paginationFooter}>
+          Current page: {page}
+        </div>
+        <div data-cy="total-pages" className={css.paginationFooter}>
+          Total pages: {totalPages}
+        </div>
       </div>
     </div>
   )
