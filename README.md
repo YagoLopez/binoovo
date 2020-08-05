@@ -27,6 +27,7 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 - Use of [CSS modules](https://css-tricks.com/css-modules-part-1-need/)
 
+- Material Design
 
 ## Demo
 
