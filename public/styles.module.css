@@ -1,7 +1,7 @@
 .centerHor {
   font: 15px Helvetica, Arial, sans-serif;
   background: #f6f6f6;
-  padding: 100px;
+  padding: 80px;
   text-align: center;
   transition: 100ms ease-in background;
   height: 56vh;
