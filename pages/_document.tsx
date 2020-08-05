@@ -5,7 +5,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <title>Binoovo Technical Exercise</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="/material-components-web.min.css" rel="stylesheet"/>
           <link href="/responsive.css" rel="stylesheet" />
