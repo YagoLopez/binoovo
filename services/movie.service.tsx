@@ -1,4 +1,5 @@
-import {CardActionButton, CardMedia} from '@rmwc/card'
+import { CardActionButton, CardMedia } from '@rmwc/card'
+import { CONST } from '../constants'
 
 const getImageUrl = (baseUrl: string, imgSize: string, posterPath: string): string => {
   if (!posterPath) return ''
@@ -22,5 +23,5 @@ export const getVideoBtn = (videos: {key: string, any}[]) => (
 )
 
 export const onAddFavorite = () => {
-  alert('Movie added to favorites (Simulation)')
+  alert(CONST.ADD_FAVORITES_MSG)
 }
