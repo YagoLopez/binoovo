@@ -26,7 +26,7 @@ export default () => {
 
   return (
     <form onSubmit={onSearchMovie}>
-      <TopBar title={'Binoovo Movie Search'} />
+      <TopBar title={CONST.TITLE} />
       { isLoading && <LinearProgress /> }
       <section className={styles.centerHor}>
         <label>
@@ -39,11 +39,7 @@ export default () => {
             value={searchterm}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchterm(e.target.value)}
             label={CONST.SEARCH_MOVIE_PLACEHOLDER}
-            trailingIcon={{
-              icon: 'close',
-              tabIndex: 0,
-              onClick: () => setSearchterm('')
-            }}
+            trailingIcon={{icon: 'close', tabIndex: 0, onClick: () => setSearchterm('')}}
           />
           <div className={styles.submitBtn}>
             <Button label="Search" theme={['secondaryBg', 'onSecondary']} raised type="submit"/>
