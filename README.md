@@ -1,7 +1,9 @@
 # Binoovo Technical Exercise
 
-This app consumes the API: https://www.themoviedb.org/documentation/api  
+- This app consumes the API: https://www.themoviedb.org/documentation/api  
 using the GraphQL endpoint: https://tmdb-graphql.com
+
+- It was created using the [`create-next-app`](https://nextjs.org/blog/create-next-app) package
 
 ## Features
 
@@ -22,6 +24,8 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 - Typescript
 
 - Mobile first responsive design
+
+- Use of [CSS modules](https://css-tricks.com/css-modules-part-1-need/)
 
 
 ## Demo
