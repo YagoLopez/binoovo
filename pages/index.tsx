@@ -1,6 +1,3 @@
-// todo: responsive layout
-// todo: tests
-// todo: remove temp folder
 
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { useRouter } from 'next/router'

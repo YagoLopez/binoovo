@@ -1,6 +1,7 @@
 # Binoovo Technical Exercise
 
-This app consumes the https://www.themoviedb.org/documentation/api API using GraphQL https://tmdb-graphql.com
+This app consumes the API: https://www.themoviedb.org/documentation/api  
+using the GraphQL endpoint: https://tmdb-graphql.com
 
 ## Features
 
@@ -20,7 +21,7 @@ This app consumes the https://www.themoviedb.org/documentation/api API using Gra
 
 - Typescript
 
-- Mobile first Responsive design
+- Mobile first responsive design
 
 
 ## Demo
