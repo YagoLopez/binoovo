@@ -23,3 +23,7 @@
   }
 
 }
+
+input.mdc-text-field__input {
+  background: white !important;
+}

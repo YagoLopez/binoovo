@@ -7,7 +7,7 @@
     "dev:test": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
-    "cypress:test": "cypress run --headed",
+    "cypress:test": "cypress run --headed --config video=false",
     "test": "run-p dev:test cypress:test"
   },
   "dependencies": {
