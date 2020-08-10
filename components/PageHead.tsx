@@ -35,7 +35,7 @@ const PageHead = ({ title, description, keywords, url, ogImage }: PageHeadProps)
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="preload" media="all"/>
-    <link href="//fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="preload" media="all"/>
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons&display=swap" media="all"/>
   </NextHead>
 )
 
