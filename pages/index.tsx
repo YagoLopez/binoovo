@@ -28,9 +28,8 @@ export default () => {
     <>
       <PageHead title="Binoovo Movie Search" />
       <TopBar title={CONST.TITLE} />
-      <h1></h1>
+      { isLoading && <LinearProgress /> }
       <form onSubmit={onSearchMovie}>
-        { isLoading && <LinearProgress /> }
         <main className={css.centerHor}>
           <label>
             <div className={css.blockText}>

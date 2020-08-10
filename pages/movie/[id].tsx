@@ -14,7 +14,7 @@ import {
 import { Typography } from '@rmwc/typography'
 import css from '../../public/styles.module.css'
 import { TopBar } from '../../components/TopBar'
-import { getCardMedia, getVideoBtn, onAddFavorite } from '../../services/movie.service'
+import {getCardMedia, getRevenue, getVideoBtn, onAddFavorite} from '../../services/movie.service'
 
 
 const MovieDetail = () => {
@@ -33,7 +33,7 @@ const MovieDetail = () => {
 
   if (data) {
     const { baseUrl, posterSizes } = data.configuration.images
-    const { overview, posterPath, releaseDate, title, videos } = data.movie
+    const { overview, posterPath, releaseDate, title, videos, revenue, popularity } = data.movie
 
     return (
       <>
@@ -49,6 +49,12 @@ const MovieDetail = () => {
                   tag="h3"
                   theme="textSecondaryOnBackground"
                   className={css.movieCardSubtitle}>Release date: { releaseDate }</Typography>
+                <Typography
+                  use="subtitle2"
+                  tag="h3"
+                  theme="textSecondaryOnBackground"
+                  className={css.movieCardSubtitle}>Popularity: { popularity } %</Typography>
+                { getRevenue(revenue) }
                 <Typography
                   use="body1"
                   tag="div"

@@ -29,26 +29,32 @@ export const Pagination = ({ page, totalPages, searchterm, getPageNumber }) => {
     <div className={css.paginationCentered}>
       <div>
         { isLoading && <LinearProgress progress={0} /> }
-        <Button
-          raised
-          data-cy="prev-btn"
-          className={css.paginationBtn}
-          label="Prev Page"
-          icon="keyboard_arrow_left"
-          onClick={() => goPreviousPage(page)}
-          disabled={isFirstPage(page)}
-          theme={['secondaryBg', 'onSecondary']}
-        />
-        <Button
-          raised
-          data-cy="next-btn"
-          className={css.paginationBtn}
-          label="Next Page"
-          trailingIcon="keyboard_arrow_right"
-          onClick={() => goNextPage(page, totalPages)}
-          disabled={isLastPage(page, totalPages)}
-          theme={['secondaryBg', 'onSecondary']}
-        />
+        {
+          !isFirstPage(page) &&
+            <Button
+              raised
+              data-cy="prev-btn"
+              className={css.paginationBtn}
+              label="Prev Page"
+              icon="keyboard_arrow_left"
+              onClick={() => goPreviousPage(page)}
+              disabled={isFirstPage(page)}
+              theme={['secondaryBg', 'onSecondary']}
+            />
+        }
+        {
+          !isLastPage(page, totalPages) &&
+            <Button
+              raised
+              data-cy="next-btn"
+              className={css.paginationBtn}
+              label="Next Page"
+              trailingIcon="keyboard_arrow_right"
+              onClick={() => goNextPage(page, totalPages)}
+              disabled={isLastPage(page, totalPages)}
+              theme={['secondaryBg', 'onSecondary']}
+            />
+        }
       </div>
       <div>
         <div data-cy="current-page" className={css.paginationFooter}>

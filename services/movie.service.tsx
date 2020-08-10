@@ -1,5 +1,7 @@
 import { CardActionButton, CardMedia } from '@rmwc/card'
 import { CONST } from '../constants'
+import {Typography} from "@rmwc/typography";
+import css from "../public/styles.module.css";
 
 const getImageUrl = (baseUrl: string, imgSize: string, posterPath: string): string => {
   if (!posterPath) return ''
@@ -16,7 +18,7 @@ export const getCardMedia = (posterPath: string, baseUrl: string, posterSizes: s
 )
 
 export const getVideoBtn = (videos: {key: string, any}[]) => (
-  videos.length > 0 &&
+  (videos.length > 0) &&
     <a href={getVideoUrl(videos[0]?.key)} target="_blank" rel="noopener">
       <CardActionButton raised>Watch Video</CardActionButton>
     </a>
@@ -25,3 +27,12 @@ export const getVideoBtn = (videos: {key: string, any}[]) => (
 export const onAddFavorite = () => {
   alert(CONST.ADD_FAVORITES_MSG)
 }
+
+export const getRevenue = (revenue) => (
+  (revenue > 0) &&
+    <Typography
+      use="subtitle2"
+      tag="h3"
+      theme="textSecondaryOnBackground"
+      className={css.movieCardSubtitle}>Revenue: { revenue } $</Typography>
+)

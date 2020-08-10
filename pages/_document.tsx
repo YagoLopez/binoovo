@@ -1,10 +1,16 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import NextHead from "next/head";
 
 class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head/>
+        <Head>
+          <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
+            rel="preload" as="font" type="font/woff2" media="all"/>
+          <link href="//fonts.googleapis.com/icon?family=Material+Icons&display=swap"
+            rel="stylesheet" media="all" />
+        </Head>
         <body style={{margin: 0}} className="mdc-typography">
           <Main />
           <NextScript />

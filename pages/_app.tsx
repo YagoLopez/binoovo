@@ -1,5 +1,3 @@
-import '@rmwc/icon/icon.css'
-import '@rmwc/theme/theme.css'
 import '@material/button/dist/mdc.button.css'
 import '@material/ripple/dist/mdc.ripple.css'
 import '@material/list/dist/mdc.list.css'
@@ -14,7 +12,8 @@ import '@material/icon-button/dist/mdc.icon-button.css'
 import '@material/card/dist/mdc.card.css'
 import '@material/theme/dist/mdc.theme.css'
 import '@material/form-field/dist/mdc.form-field.css'
-
+import '@rmwc/icon/icon.css'
+import '@rmwc/theme/theme.css'
 import '../public/responsive.css'
 
 export default ({ Component, pageProps }) => <Component {...pageProps} />

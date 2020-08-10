@@ -5,9 +5,9 @@ export const GET_MOVIES = gql`
     allMovies(search: $searchterm, page: $page) {
       results {
         id
-        releaseDate
         title
         posterPath
+        popularity
       }
       page
       totalPages
@@ -35,6 +35,7 @@ export const GET_MOVIE = gql`
       releaseDate
       revenue
       title
+      popularity
       videos {
         key
       }
