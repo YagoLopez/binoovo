@@ -26,7 +26,7 @@ export default () => {
 
   return (
     <>
-      <PageHead title="Binoovo Movie Search" />
+      <PageHead title={CONST.TITLE} />
       <TopBar title={CONST.TITLE} />
       { isLoading && <LinearProgress /> }
       <form onSubmit={onSearchMovie}>
@@ -40,7 +40,8 @@ export default () => {
               icon="search"
               value={searchterm}
               onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchterm(e.target.value)}
-              label={CONST.SEARCH_MOVIE_PLACEHOLDER}
+              label={CONST.INPUT_SEARCH_PLACEHOLDER}
+              helpText={CONST.INPUT_SEARCH_HELP}
               trailingIcon={{icon: 'close', tabIndex: 0, onClick: () => setSearchterm('')}}
             />
             <div className={css.submitBtn}>

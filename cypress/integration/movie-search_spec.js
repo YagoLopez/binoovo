@@ -35,12 +35,12 @@ describe('Test pagination', () => {
 
   it('Should be disabled previous button for first page', () => {
     cy.visit('http://localhost:4000/movies-search/'+ searchTerm1 +'?page=1')
-    cy.get('[data-cy=prev-btn]').should('be.disabled')
+    cy.get('[data-cy=prev-btn]').should('not.exist')
   })
 
   it('Should be disabled next button for last page', () => {
     cy.visit('http://localhost:4000/movies-search/rambo?page=2')
-    cy.get('[data-cy=next-btn]').should('be.disabled')
+    cy.get('[data-cy=next-btn]').should('not.exist')
   })
 
   it('Should return no results for page out of range and not break', () => {
