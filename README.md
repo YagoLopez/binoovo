@@ -33,6 +33,10 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 - https://binoovo.vercel.app/
 
+## Audit
+
+- https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fbinoovo.vercel.app
+
 ## Run and build
 
 ```bash

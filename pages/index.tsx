@@ -40,8 +40,7 @@ export default () => {
               icon="search"
               value={searchterm}
               onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchterm(e.target.value)}
-              label={CONST.INPUT_SEARCH_PLACEHOLDER}
-              helpText={CONST.INPUT_SEARCH_HELP}
+              label={CONST.INPUT_SEARCH_HELP}
               trailingIcon={{icon: 'close', tabIndex: 0, onClick: () => setSearchterm('')}}
             />
             <div className={css.submitBtn}>
@@ -49,17 +48,18 @@ export default () => {
             </div>
           </label>
           <div className={css.blockText}>
-            <div>
-              <Typography use="caption">This app uses "The Movie Database GraphQL API":</Typography>
-            </div>
+            <div><Typography use="caption">This app uses "The Movie Database GraphQL API":</Typography></div>
             <div>
               <a href="https://tmdb-graphql.com/" target="_blank" className={css.link} rel="noopener">
                 https://tmdb-graphql.com
               </a>
             </div>
-            <p>
-              <Typography use="caption">Developed by Yago López</Typography>
-            </p>
+            <p><Typography use="caption">Developed by Yago López</Typography></p>
+            <div>
+              <a href="https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fbinoovo.vercel.app" target="_blank">
+                <Typography use="caption">Audit</Typography>
+              </a> →
+            </div>
           </div>
         </main>
       </form>
