@@ -1,5 +1,5 @@
-import {MovieListItem} from "./MovieListItem";
-import {List, ListDivider, ListGroup} from "@rmwc/list";
+import { MovieListItem } from './MovieListItem'
+import { List, ListGroup } from '@rmwc/list'
 
 export const MovieList = ({ listData, imageData }) =>
   listData.map((movie, index) => (

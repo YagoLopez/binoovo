@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
-import {Button} from '@rmwc/button'
-import css from '../public/styles.module.css'
 import { useState } from 'react'
-import {LinearProgress} from '@rmwc/linear-progress'
+import { Button } from '@rmwc/button'
+import { LinearProgress } from '@rmwc/linear-progress'
+import css from '../public/styles.module.css'
 
 export const Pagination = ({ page, totalPages, searchterm, getPageNumber }) => {
 

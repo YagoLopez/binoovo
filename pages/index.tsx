@@ -1,4 +1,3 @@
-
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { useRouter } from 'next/router'
 import { TopBar } from '../components/TopBar'
@@ -8,6 +7,7 @@ import { Typography } from '@rmwc/typography'
 import { TextField } from '@rmwc/textfield'
 import { Button } from '@rmwc/button'
 import css from '../public/styles.module.css'
+import PageHead from '../components/PageHead'
 
 export default () => {
 
@@ -25,40 +25,44 @@ export default () => {
   }
 
   return (
-    <form onSubmit={onSearchMovie}>
+    <>
+      <PageHead title="Binoovo Movie Search" />
       <TopBar title={CONST.TITLE} />
-      { isLoading && <LinearProgress /> }
-      <section className={css.centerHor}>
-        <label>
+      <h1></h1>
+      <form onSubmit={onSearchMovie}>
+        { isLoading && <LinearProgress /> }
+        <main className={css.centerHor}>
+          <label>
+            <div className={css.blockText}>
+              <div><Typography use="headline6">🎞️ Search Movie</Typography></div>
+              <div><Typography use="body1">For example: "Contact"</Typography></div>
+            </div>
+            <TextField
+              icon="search"
+              value={searchterm}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchterm(e.target.value)}
+              label={CONST.SEARCH_MOVIE_PLACEHOLDER}
+              trailingIcon={{icon: 'close', tabIndex: 0, onClick: () => setSearchterm('')}}
+            />
+            <div className={css.submitBtn}>
+              <Button label="Search" theme={['secondaryBg', 'onSecondary']} raised type="submit"/>
+            </div>
+          </label>
           <div className={css.blockText}>
-            <div><Typography use="headline6">🎞️ Search Movie</Typography></div>
-            <div><Typography use="body1">For example: "Contact"</Typography></div>
+            <div>
+              <Typography use="caption">This app uses "The Movie Database GraphQL API":</Typography>
+            </div>
+            <div>
+              <a href="https://tmdb-graphql.com/" target="_blank" className={css.link} rel="noopener">
+                https://tmdb-graphql.com
+              </a>
+            </div>
+            <p>
+              <Typography use="caption">Developed by Yago López</Typography>
+            </p>
           </div>
-          <TextField
-            icon="search"
-            value={searchterm}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchterm(e.target.value)}
-            label={CONST.SEARCH_MOVIE_PLACEHOLDER}
-            trailingIcon={{icon: 'close', tabIndex: 0, onClick: () => setSearchterm('')}}
-          />
-          <div className={css.submitBtn}>
-            <Button label="Search" theme={['secondaryBg', 'onSecondary']} raised type="submit"/>
-          </div>
-        </label>
-        <div className={css.blockText}>
-          <div>
-            <Typography use="caption">This app uses "The Movie Database GraphQL API":</Typography>
-          </div>
-          <div>
-            <a href="https://tmdb-graphql.com/" target="_blank" className={css.link} rel="noopener">
-              https://tmdb-graphql.com
-            </a>
-          </div>
-          <p>
-            <Typography use="caption">Developed by Yago López</Typography>
-          </p>
-        </div>
-      </section>
-    </form>
+        </main>
+      </form>
+    </>
   )
 }
