@@ -6,6 +6,7 @@ import { LinearProgress } from '@rmwc/linear-progress'
 import { Typography } from '@rmwc/typography'
 import { TextField } from '@rmwc/textfield'
 import { Button } from '@rmwc/button'
+import { Fab } from '@rmwc/fab'
 import css from '../public/styles.module.css'
 import PageHead from '../components/PageHead'
 
@@ -55,11 +56,9 @@ export default () => {
               </a>
             </div>
             <p><Typography use="caption">Developed by Yago López</Typography></p>
-            <div>
-              <a href="https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fbinoovo.vercel.app" target="_blank">
-                <Typography use="caption">Audit</Typography>
-              </a> →
-            </div>
+            <a href="https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fbinoovo.vercel.app" target="_blank">
+              <Typography use="caption">Audit</Typography>
+            </a> →
           </div>
         </main>
       </form>
