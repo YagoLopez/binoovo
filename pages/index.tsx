@@ -6,11 +6,10 @@ import { LinearProgress } from '@rmwc/linear-progress'
 import { Typography } from '@rmwc/typography'
 import { TextField } from '@rmwc/textfield'
 import { Button } from '@rmwc/button'
-import { Fab } from '@rmwc/fab'
 import css from '../public/styles.module.css'
 import PageHead from '../components/PageHead'
 
-export default () => {
+const Index = () => {
 
   const router = useRouter()
   const [searchterm, setSearchterm] = useState('')
@@ -65,3 +64,5 @@ export default () => {
     </>
   )
 }
+
+export default Index
