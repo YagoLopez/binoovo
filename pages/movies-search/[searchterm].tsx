@@ -9,6 +9,7 @@ import { CONST } from '../../constants'
 import { GET_MOVIES } from '../../schemas'
 import { LinearProgress } from '@rmwc/linear-progress'
 import { getPageNumber, isPageNumberInRange } from '../../services/search.service'
+import PageHead from '../../components/PageHead'
 
 const Page = () => {
 
@@ -32,6 +33,7 @@ const Page = () => {
     if (totalPages === 0) return <NoResults message={CONST.NO_RESULTS}/>
     return (
       <>
+        <PageHead title={CONST.TITLE} />
         <TopBar title={'Movies Search Results'} showBackBtn={true} showHomeBtn={true} />
         <div className="responsive-card">
           <MovieList listData={results} imageData={images}/>
