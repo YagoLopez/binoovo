@@ -1,7 +1,12 @@
-const withPWA = require('next-pwa')
+const env = process.env.NODE_ENV
 
-module.exports = withPWA({
-  pwa: {
-    dest: 'public'
-  }
-})
+console.log('Environment: ', env)
+
+if (env === 'production') {
+  const withPWA = require('next-pwa')
+  module.exports = (env === 'production') && withPWA({
+    pwa: {
+      dest: 'public'
+    }
+  })
+}

@@ -19,6 +19,8 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 - Server Side Rendering with [Nextjs](https://nextjs.org/)
 
+- Progressive Web Application ([PWA](https://web.dev/progressive-web-apps/))
+
 - Isomorphic Javascript
 
 - Typescript
