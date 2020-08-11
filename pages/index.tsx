@@ -40,7 +40,7 @@ const Index = () => {
               icon="search"
               value={searchterm}
               onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchterm(e.target.value)}
-              label={CONST.INPUT_SEARCH_HELP}
+              label={CONST.INPUT_SEARCH_PLACEHOLDER}
               trailingIcon={{icon: 'close', tabIndex: 0, onClick: () => setSearchterm('')}}
             />
             <div className={css.submitBtn}>
@@ -55,7 +55,8 @@ const Index = () => {
               </a>
             </div>
             <p><Typography use="caption">Developed by Yago López</Typography></p>
-            <a href="https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fbinoovo.vercel.app" target="_blank">
+            <a href="https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fbinoovo.vercel.app"
+               target="_blank" rel="noreferrer">
               <Typography use="caption">Audit</Typography>
             </a> →
           </div>
