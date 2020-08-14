@@ -35,6 +35,8 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 - https://binoovo.vercel.app/
 
+![Scan QRcode](binoovo-qrcode.png)
+
 ## Audit
 
 - https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fbinoovo.vercel.app
