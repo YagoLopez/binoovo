@@ -5,8 +5,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
-            rel="preload" as="font" type="font/woff2" media="all"/>
+          <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500"
+            rel="preload" as="style" type="font/woff2" media="all"/>
           <link href="//fonts.googleapis.com/icon?family=Material+Icons&display=swap"
             rel="stylesheet" media="all" />
         </Head>

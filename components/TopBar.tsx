@@ -26,20 +26,16 @@ export const TopBar = ({ title, showBackBtn, showHomeBtn }: TopBarProps) => {
       <TopAppBar fixed>
         <TopAppBarRow>
         <TopAppBarSection alignStart>
-          {
-            showBackBtn &&
-              <IconButton onClick={goBack} icon="arrow_back" title="Go Back" />
-          }
+          {showBackBtn &&
+            <IconButton onClick={goBack} icon="arrow_back" title="Go Back" />}
           <TopAppBarTitle>{ title }</TopAppBarTitle>
         </TopAppBarSection>
-        {
-          showHomeBtn &&
+          {showHomeBtn &&
             <TopAppBarSection alignEnd>
               <Link href="/">
                 <a title="Return to Home Page"><TopAppBarActionItem icon="home" /></a>
               </Link>
-            </TopAppBarSection>
-        }
+            </TopAppBarSection>}
       </TopAppBarRow>
       </TopAppBar>
       <TopAppBarFixedAdjust />
