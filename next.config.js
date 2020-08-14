@@ -1,12 +1,15 @@
-const env = process.env.NODE_ENV
+const withPWA = require('next-pwa')
+const { PHASE_PRODUCTION_BUILD } = require('next/constants')
 
-console.log('Environment: ', env)
+// If prod build then create PWA infrastructure
+module.exports = (phase, { defaultConfig }) => {
 
-if (env === 'production') {
-  const withPWA = require('next-pwa')
-  module.exports = (env === 'production') && withPWA({
-    pwa: {
-      dest: 'public'
-    }
-  })
+  if (phase === PHASE_PRODUCTION_BUILD) {
+    return withPWA({
+      pwa: { dest: 'public' }
+    })
+  }
+  return {
+    env: []
+  }
 }
