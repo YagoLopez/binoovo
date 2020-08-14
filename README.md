@@ -1,4 +1,4 @@
-# Binoovo Technical Exercise
+# Binoovo Search Movies App
 
 - This app consumes the API: https://www.themoviedb.org/documentation/api  
 using the GraphQL endpoint: https://tmdb-graphql.com
