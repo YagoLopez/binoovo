@@ -14,7 +14,8 @@ import {
 import { Typography } from '@rmwc/typography'
 import css from '../../public/styles.module.css'
 import { TopBar } from '../../components/TopBar'
-import { getCardMedia, getRevenue, getVideoBtn, onAddFavorite } from '../../services/movie.service'
+import { getCardMedia, getRevenue, getVideoBtn, onAddFavorite, onClickMovieDetail
+} from '../../services/movie.service'
 
 
 const MovieDetail = () => {
@@ -41,7 +42,7 @@ const MovieDetail = () => {
         <div className={css.movieDetailPage}>
           <Card className="movieCard">
             <CardPrimaryAction>
-              { getCardMedia(posterPath, baseUrl, posterSizes) }
+              { getCardMedia(id, title, posterPath, baseUrl, posterSizes) }
               <div className={css.movieCardContent}>
                 <Typography use="headline6" tag="h2">{ title }</Typography>
                 <Typography

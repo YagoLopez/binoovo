@@ -1,20 +1,26 @@
 import { CardActionButton, CardMedia } from '@rmwc/card'
 import { CONST } from '../constants'
-import {Typography} from "@rmwc/typography";
-import css from "../public/styles.module.css";
+import { Typography } from '@rmwc/typography'
+import { Tooltip } from '@rmwc/tooltip'
+import css from '../public/styles.module.css'
+import slug from 'slug'
 
 const getImageUrl = (baseUrl: string, imgSize: string, posterPath: string): string => {
   if (!posterPath) return ''
   return baseUrl + imgSize + posterPath
 }
 
-const getVideoUrl = (videoId: string) => `https://www.youtube.com/watch?v=${videoId}`
+const getVideoUrl = (videoId: string) => `${CONST.YOUTUBE_VID_URL}${videoId}`
 
-export const getCardMedia = (posterPath: string, baseUrl: string, posterSizes: string[]) => (
+export const getCardMedia = (id: string, title: string, posterPath: string, baseUrl: string, posterSizes: string[]) => (
   posterPath &&
-    <CardMedia square
-      style={{backgroundImage: `url(${getImageUrl(baseUrl, posterSizes[2], posterPath)})`}}
-    />
+    <Tooltip content={CONST.TOOLTIP_DETAIL_INFO} align="bottomRight">
+      <CardMedia
+        square
+        onClick={() => onClickMovieDetail({ id, title })}
+        style={{backgroundImage: `url(${getImageUrl(baseUrl, posterSizes[2], posterPath)})`}}
+      />
+    </Tooltip>
 )
 
 export const getVideoBtn = (videos: {key: string, any}[]) => (
@@ -36,3 +42,8 @@ export const getRevenue = (revenue) => (
       theme="textSecondaryOnBackground"
       className={css.movieCardSubtitle}>Revenue: { revenue } $</Typography>
 )
+
+export const onClickMovieDetail = ({ id, title }) => {
+  const sluggedTitle = slug(title)
+  window.open(`${CONST.MOVIEDB_DETAIL_BASE_URL}/${id}-${sluggedTitle}`)
+}

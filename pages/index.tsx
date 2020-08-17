@@ -55,7 +55,7 @@ const Index = () => {
               </a>
             </div>
             <p><Typography use="caption">Developed by Yago López</Typography></p>
-            <a href="https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fbinoovo.vercel.app"
+            <a href={CONST.LIGHTHOUSE_AUDIT_URL}
                target="_blank" rel="noreferrer">
               <Typography use="caption">Audit</Typography>
             </a> →

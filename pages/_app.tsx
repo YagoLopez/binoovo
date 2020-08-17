@@ -14,6 +14,9 @@ import '@material/theme/dist/mdc.theme.css'
 import '@material/form-field/dist/mdc.form-field.css'
 import '@rmwc/icon/icon.css'
 import '@rmwc/theme/theme.css'
+import '@rmwc/tooltip/tooltip.css';
 import '../public/responsive.css'
 
-export default ({ Component, pageProps }) => <Component {...pageProps} />
+const App = ({ Component, pageProps }) => <Component {...pageProps} />
+
+export default App
