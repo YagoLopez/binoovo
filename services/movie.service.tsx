@@ -1,7 +1,6 @@
 import { CardActionButton, CardMedia } from '@rmwc/card'
 import { CONST } from '../constants'
 import { Typography } from '@rmwc/typography'
-import { Tooltip } from '@rmwc/tooltip'
 import css from '../public/styles.module.css'
 import slug from 'slug'
 
@@ -14,13 +13,11 @@ const getVideoUrl = (videoId: string) => `${CONST.YOUTUBE_VID_URL}${videoId}`
 
 export const getCardMedia = (id: string, title: string, posterPath: string, baseUrl: string, posterSizes: string[]) => (
   posterPath &&
-    <Tooltip content={CONST.TOOLTIP_DETAIL_INFO} align="bottomRight">
-      <CardMedia
-        square
-        onClick={() => onClickMovieDetail({ id, title })}
-        style={{backgroundImage: `url(${getImageUrl(baseUrl, posterSizes[2], posterPath)})`}}
-      />
-    </Tooltip>
+    <CardMedia
+      square
+      onClick={() => onClickMovieDetail({ id, title })}
+      style={{backgroundImage: `url(${getImageUrl(baseUrl, posterSizes[2], posterPath)})`}}
+    />
 )
 
 export const getVideoBtn = (videos: {key: string, any}[]) => (

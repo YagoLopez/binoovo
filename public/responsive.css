@@ -3,7 +3,7 @@
   margin-bottom: 3rem;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 460px) {
   .responsive-card {
     width: 65%;
     margin: 45px auto 15px;

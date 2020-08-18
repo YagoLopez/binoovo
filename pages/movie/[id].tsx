@@ -16,6 +16,8 @@ import css from '../../public/styles.module.css'
 import { TopBar } from '../../components/TopBar'
 import { getCardMedia, getRevenue, getVideoBtn, onAddFavorite, onClickMovieDetail
 } from '../../services/movie.service'
+import { Tooltip } from '@rmwc/tooltip'
+import { CONST } from '../../constants'
 
 
 const MovieDetail = () => {
@@ -43,24 +45,26 @@ const MovieDetail = () => {
           <Card className="movieCard">
             <CardPrimaryAction>
               { getCardMedia(id, title, posterPath, baseUrl, posterSizes) }
-              <div className={css.movieCardContent}>
-                <Typography use="headline6" tag="h2">{ title }</Typography>
-                <Typography
-                  use="subtitle2"
-                  tag="h3"
-                  theme="textSecondaryOnBackground"
-                  className={css.movieCardSubtitle}>Release date: { releaseDate }</Typography>
-                <Typography
-                  use="subtitle2"
-                  tag="h3"
-                  theme="textSecondaryOnBackground"
-                  className={css.movieCardSubtitle}>Popularity: { popularity } %</Typography>
-                { getRevenue(revenue) }
-                <Typography
-                  use="body1"
-                  tag="div"
-                  theme="textSecondaryOnBackground">{ overview }</Typography>
-              </div>
+              <Tooltip content={CONST.TOOLTIP_DETAIL_INFO} align="topRight">
+                <div className={css.movieCardContent} onClick={() => onClickMovieDetail({ id, title })}>
+                  <Typography use="headline6" tag="h2">{ title }</Typography>
+                  <Typography
+                    use="subtitle2"
+                    tag="h3"
+                    theme="textSecondaryOnBackground"
+                    className={css.movieCardSubtitle}>Release date: { releaseDate }</Typography>
+                  <Typography
+                    use="subtitle2"
+                    tag="h3"
+                    theme="textSecondaryOnBackground"
+                    className={css.movieCardSubtitle}>Popularity: { popularity } %</Typography>
+                  { getRevenue(revenue) }
+                  <Typography
+                    use="body1"
+                    tag="div"
+                    theme="textSecondaryOnBackground">{ overview }</Typography>
+                </div>
+              </Tooltip>
             </CardPrimaryAction>
             <CardActions>
               <CardActionButtons>{ getVideoBtn(videos) }</CardActionButtons>
