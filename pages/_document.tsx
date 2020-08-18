@@ -5,8 +5,9 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <title>Binoovo Movies Search</title>
           <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500"
-            rel="preload" as="font" media="all"/>
+            rel="prefetch" as="style" media="all" crossOrigin="anonymous"/>
           <link href="//fonts.googleapis.com/icon?family=Material+Icons&display=swap"
             rel="stylesheet" media="all" />
         </Head>

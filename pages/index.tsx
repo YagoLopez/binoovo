@@ -29,7 +29,7 @@ const Index = () => {
       <PageHead title={CONST.TITLE} />
       <TopBar title={CONST.TITLE} />
       { isLoading && <LinearProgress /> }
-      <form onSubmit={onSearchMovie}>
+      <form onSubmit={onSearchMovie} className={css.form}>
         <main className={css.centerHor}>
           <label>
             <div className={css.blockText}>

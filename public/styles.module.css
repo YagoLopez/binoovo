@@ -1,9 +1,6 @@
 .centerHor {
   font: 15px Helvetica, Arial, sans-serif;
-  background: #f6f6f6;
-  padding: 80px;
   text-align: center;
-  transition: 100ms ease-in background;
   height: 56vh;
 }
 
@@ -72,4 +69,18 @@
   align-items: center;
   flex-direction: column;
   margin-bottom: 1.5rem;
+}
+
+.form {
+  align-items: center;
+  background: #f6f6f6;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  transition: 100ms ease-in background;
+}
+
+.textAlignLeft {
+  text-align: left;
+  padding: 10px;
 }
