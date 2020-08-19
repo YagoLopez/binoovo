@@ -14,8 +14,10 @@ import {
 import { Typography } from '@rmwc/typography'
 import css from '../../public/styles.module.css'
 import { TopBar } from '../../components/TopBar'
-import { MovieImage, MovieRevenue, YouTubeVideoButton, onAddFavorite, onClickMovieDetail
-} from '../../services/movie.service'
+import { onAddFavorite, onClickMovieDetail } from '../../services/movie.service'
+import { MovieImage } from './components/MovieImage'
+import { MovieRevenue } from './components/MovieRevenue';
+import { YouTubeVideoButton } from './components/YouTubeVideoButton';
 import { Tooltip } from '@rmwc/tooltip'
 import { CONST } from '../../constants'
 
