@@ -20,13 +20,13 @@ export const getCardMedia = (id: string, title: string, posterPath: string, base
     />
 )
 
-export interface VideosProps {
-  videos: {key: string}[]
+export interface YouTubeBtnProp {
+  videoId: string
 }
 
-export const YouTubeVideoButton = ({ videos }: VideosProps) => (
-  (videos.length > 0) &&
-    <a href={getVideoUrl(videos[0]?.key)} target="_blank" rel="noopener">
+export const YouTubeVideoButton = ({ videoId }: YouTubeBtnProp) => (
+  (videoId.length > 0) &&
+    <a href={getVideoUrl(videoId)} target="_blank" rel="noopener">
       <CardActionButton raised>Watch Video</CardActionButton>
     </a>
 )

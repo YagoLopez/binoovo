@@ -68,7 +68,7 @@ const MovieDetail = () => {
             </CardPrimaryAction>
             <CardActions>
               <CardActionButtons>
-                <YouTubeVideoButton videos={videos}/>
+                <YouTubeVideoButton videoId={videos[0]?.key}/>
               </CardActionButtons>
               <CardActionIcons>
                 <CardActionIcon onIcon="favorite" icon="favorite_border" onClick={onAddFavorite} />
