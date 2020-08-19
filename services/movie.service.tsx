@@ -11,7 +11,15 @@ const getImageUrl = (baseUrl: string, imgSize: string, posterPath: string): stri
 
 const getVideoUrl = (videoId: string) => `${CONST.YOUTUBE_VID_URL}${videoId}`
 
-export const getCardMedia = (id: string, title: string, posterPath: string, baseUrl: string, posterSizes: string[]) => (
+interface MovieImageProps {
+  id: string,
+  title: string,
+  posterPath: string,
+  baseUrl: string,
+  posterSizes: string[]
+}
+
+export const MovieImage = ({ id, title, posterPath, baseUrl, posterSizes }: MovieImageProps) => (
   posterPath &&
     <CardMedia
       square
@@ -25,7 +33,7 @@ interface YouTubeBtnProp {
 }
 
 export const YouTubeVideoButton = ({ videoId }: YouTubeBtnProp) => (
-  (videoId.length > 0) &&
+  (videoId?.length > 0) &&
     <a href={getVideoUrl(videoId)} target="_blank" rel="noopener">
       <CardActionButton raised>Watch Video</CardActionButton>
     </a>
@@ -48,7 +56,7 @@ export const MovieRevenue = ({ revenue }: RevenueProps) => (
       className={css.movieCardSubtitle}>Revenue: { revenue } $</Typography>
 )
 
-export const onClickMovieDetail = ({ id, title }) => {
+export const onClickMovieDetail = ({id, title}: {id: string, title: string}): void => {
   const sluggedTitle = slug(title)
   window.open(`${CONST.MOVIEDB_DETAIL_BASE_URL}/${id}-${sluggedTitle}`)
 }

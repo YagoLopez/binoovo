@@ -14,7 +14,7 @@ import {
 import { Typography } from '@rmwc/typography'
 import css from '../../public/styles.module.css'
 import { TopBar } from '../../components/TopBar'
-import { getCardMedia, MovieRevenue, YouTubeVideoButton, onAddFavorite, onClickMovieDetail,
+import { MovieImage, MovieRevenue, YouTubeVideoButton, onAddFavorite, onClickMovieDetail
 } from '../../services/movie.service'
 import { Tooltip } from '@rmwc/tooltip'
 import { CONST } from '../../constants'
@@ -44,7 +44,13 @@ const MovieDetail = () => {
         <div className={css.movieDetailPage}>
           <Card className="movieCard">
             <CardPrimaryAction>
-              { getCardMedia(id, title, posterPath, baseUrl, posterSizes) }
+              <MovieImage
+                id={id}
+                title={title}
+                posterPath={posterPath}
+                baseUrl={baseUrl}
+                posterSizes={posterSizes}
+              />
               <Tooltip content={CONST.TOOLTIP_DETAIL_INFO} align="topRight">
                 <div className={css.movieCardContent} onClick={() => onClickMovieDetail({ id, title })}>
                   <Typography use="headline6" tag="h2">{ title }</Typography>
