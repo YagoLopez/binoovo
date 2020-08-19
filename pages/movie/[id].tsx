@@ -14,7 +14,7 @@ import {
 import { Typography } from '@rmwc/typography'
 import css from '../../public/styles.module.css'
 import { TopBar } from '../../components/TopBar'
-import { getCardMedia, getRevenue, getVideoBtn, onAddFavorite, onClickMovieDetail
+import { getCardMedia, getRevenue, YouTubeVideoButton, onAddFavorite, onClickMovieDetail,
 } from '../../services/movie.service'
 import { Tooltip } from '@rmwc/tooltip'
 import { CONST } from '../../constants'
@@ -67,7 +67,9 @@ const MovieDetail = () => {
               </Tooltip>
             </CardPrimaryAction>
             <CardActions>
-              <CardActionButtons>{ getVideoBtn(videos) }</CardActionButtons>
+              <CardActionButtons>
+                <YouTubeVideoButton videos={videos}/>
+              </CardActionButtons>
               <CardActionIcons>
                 <CardActionIcon onIcon="favorite" icon="favorite_border" onClick={onAddFavorite} />
               </CardActionIcons>
