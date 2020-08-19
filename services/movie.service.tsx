@@ -6,20 +6,22 @@ import slug from 'slug'
 
 const getImageUrl = (baseUrl: string, imgSize: string, posterPath: string): string => {
   if (!posterPath) return ''
-  return baseUrl + imgSize + posterPath
+  return `${baseUrl}${imgSize}${posterPath}`
 }
 
 const getVideoUrl = (videoId: string) => `${CONST.YOUTUBE_VID_URL}${videoId}`
 
-interface MovieImageProps {
-  id: string,
-  title: string,
-  posterPath: string,
-  baseUrl: string,
-  posterSizes: string[]
+interface MovieImgProps {
+  data: {
+    id: string,
+    title: string,
+    posterPath: string,
+    baseUrl: string,
+    posterSizes: string[]
+  }
 }
 
-export const MovieImage = ({ id, title, posterPath, baseUrl, posterSizes }: MovieImageProps) => (
+export const MovieImage = ({ data: {id, title, baseUrl, posterPath, posterSizes} }: MovieImgProps) => (
   posterPath &&
     <CardMedia
       square

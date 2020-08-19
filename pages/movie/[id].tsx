@@ -44,13 +44,7 @@ const MovieDetail = () => {
         <div className={css.movieDetailPage}>
           <Card className="movieCard">
             <CardPrimaryAction>
-              <MovieImage
-                id={id}
-                title={title}
-                posterPath={posterPath}
-                baseUrl={baseUrl}
-                posterSizes={posterSizes}
-              />
+              <MovieImage data={{id, title, posterPath, baseUrl, posterSizes}}/>
               <Tooltip content={CONST.TOOLTIP_DETAIL_INFO} align="topRight">
                 <div className={css.movieCardContent} onClick={() => onClickMovieDetail({ id, title })}>
                   <Typography use="headline6" tag="h2">{ title }</Typography>
