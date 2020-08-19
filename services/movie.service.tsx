@@ -20,7 +20,7 @@ export const getCardMedia = (id: string, title: string, posterPath: string, base
     />
 )
 
-export interface YouTubeBtnProp {
+interface YouTubeBtnProp {
   videoId: string
 }
 
@@ -35,7 +35,11 @@ export const onAddFavorite = () => {
   alert(CONST.ADD_FAVORITES_MSG)
 }
 
-export const getRevenue = (revenue) => (
+interface RevenueProps {
+  revenue: string | number
+}
+
+export const MovieRevenue = ({ revenue }: RevenueProps) => (
   (revenue > 0) &&
     <Typography
       use="subtitle2"

@@ -14,7 +14,7 @@ import {
 import { Typography } from '@rmwc/typography'
 import css from '../../public/styles.module.css'
 import { TopBar } from '../../components/TopBar'
-import { getCardMedia, getRevenue, YouTubeVideoButton, onAddFavorite, onClickMovieDetail,
+import { getCardMedia, MovieRevenue, YouTubeVideoButton, onAddFavorite, onClickMovieDetail,
 } from '../../services/movie.service'
 import { Tooltip } from '@rmwc/tooltip'
 import { CONST } from '../../constants'
@@ -58,7 +58,7 @@ const MovieDetail = () => {
                     tag="h3"
                     theme="textSecondaryOnBackground"
                     className={css.movieCardSubtitle}>Popularity: { popularity } %</Typography>
-                  { getRevenue(revenue) }
+                  <MovieRevenue revenue={revenue}/>
                   <Typography
                     use="body1"
                     tag="div"
