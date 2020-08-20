@@ -5,19 +5,18 @@ import { NoResults } from "../../components/NoResults";
 import { GET_MOVIE } from "../../schemas";
 import { LinearProgress } from '@rmwc/linear-progress'
 import {
-  Card,
-  CardActionButtons, CardActionIcon,
-  CardActionIcons,
-  CardActions,
-  CardPrimaryAction
+  Card, CardActionButtons, CardActionIcon,
+  CardActionIcons, CardActions, CardPrimaryAction
 } from '@rmwc/card'
 import { Typography } from '@rmwc/typography'
-import css from '../../public/styles.module.css'
 import { TopBar } from '../../components/TopBar'
-import { getCardMedia, getRevenue, getVideoBtn, onAddFavorite, onClickMovieDetail
-} from '../../services/movie.service'
+import { onAddFavorite, onClickMovieDetail } from '../../services/movie.service'
+import { MovieImage } from '../../components/movie/MovieImage'
+import { MovieRevenue } from '../../components/movie/MovieRevenue';
+import { WatchYouTubeVideo } from '../../components/movie/WatchYouTubeVideo';
 import { Tooltip } from '@rmwc/tooltip'
 import { CONST } from '../../constants'
+import css from '../../public/styles.module.css'
 
 
 const MovieDetail = () => {
@@ -44,7 +43,7 @@ const MovieDetail = () => {
         <div className={css.movieDetailPage}>
           <Card className="movieCard">
             <CardPrimaryAction>
-              { getCardMedia(id, title, posterPath, baseUrl, posterSizes) }
+              <MovieImage data={{ id, title, posterPath, baseUrl, posterSizes }}/>
               <Tooltip content={CONST.TOOLTIP_DETAIL_INFO} align="topRight">
                 <div className={css.movieCardContent} onClick={() => onClickMovieDetail({ id, title })}>
                   <Typography use="headline6" tag="h2">{ title }</Typography>
@@ -58,7 +57,7 @@ const MovieDetail = () => {
                     tag="h3"
                     theme="textSecondaryOnBackground"
                     className={css.movieCardSubtitle}>Popularity: { popularity } %</Typography>
-                  { getRevenue(revenue) }
+                  <MovieRevenue revenue={revenue}/>
                   <Typography
                     use="body1"
                     tag="div"
@@ -67,7 +66,9 @@ const MovieDetail = () => {
               </Tooltip>
             </CardPrimaryAction>
             <CardActions>
-              <CardActionButtons>{ getVideoBtn(videos) }</CardActionButtons>
+              <CardActionButtons>
+                <WatchYouTubeVideo videoId={videos[0]?.key}/>
+              </CardActionButtons>
               <CardActionIcons>
                 <CardActionIcon onIcon="favorite" icon="favorite_border" onClick={onAddFavorite} />
               </CardActionIcons>
