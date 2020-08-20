@@ -1,5 +1,5 @@
 import { CardMedia } from '@rmwc/card'
-import { getImageUrl, onClickMovieDetail } from '../../../services/movie.service'
+import { getImageUrl, onClickMovieDetail } from '../../services/movie.service'
 
 interface MovieImgProps {
   data: {

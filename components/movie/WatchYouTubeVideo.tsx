@@ -1,5 +1,5 @@
 import { CardActionButton } from '@rmwc/card'
-import { getVideoUrl } from '../../../services/movie.service'
+import { getVideoUrl } from '../../services/movie.service'
 
 interface YouTubeBtnProp {
   videoId: string

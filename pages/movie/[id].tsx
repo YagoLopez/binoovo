@@ -11,9 +11,9 @@ import {
 import { Typography } from '@rmwc/typography'
 import { TopBar } from '../../components/TopBar'
 import { onAddFavorite, onClickMovieDetail } from '../../services/movie.service'
-import { MovieImage } from './components/MovieImage'
-import { MovieRevenue } from './components/MovieRevenue';
-import { WatchYouTubeVideo } from './components/WatchYouTubeVideo';
+import { MovieImage } from '../../components/movie/MovieImage'
+import { MovieRevenue } from '../../components/movie/MovieRevenue';
+import { WatchYouTubeVideo } from '../../components/movie/WatchYouTubeVideo';
 import { Tooltip } from '@rmwc/tooltip'
 import { CONST } from '../../constants'
 import css from '../../public/styles.module.css'
