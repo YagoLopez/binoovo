@@ -39,7 +39,7 @@ const MovieDetail = () => {
 
     return (
       <>
-        <TopBar title={'Movie Details'} showBackBtn={true} showHomeBtn={true}/>
+        <TopBar title={CONST.MOVIE_DETAILS_TITLE} showBackBtn={true} showHomeBtn={true}/>
         <div className={css.movieDetailPage}>
           <Card className="movieCard">
             <CardPrimaryAction>
