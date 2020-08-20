@@ -6,7 +6,7 @@ import {
   ListItemSecondaryText,
   ListItemText
 } from '@rmwc/list'
-import styles from '../public/styles.module.css'
+import styles from '../../public/styles.module.css'
 
 export const MovieListItem = ({ movieData, baseUrl, imgSize }) => {
 
