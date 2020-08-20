@@ -5,21 +5,18 @@ import { NoResults } from "../../components/NoResults";
 import { GET_MOVIE } from "../../schemas";
 import { LinearProgress } from '@rmwc/linear-progress'
 import {
-  Card,
-  CardActionButtons, CardActionIcon,
-  CardActionIcons,
-  CardActions,
-  CardPrimaryAction
+  Card, CardActionButtons, CardActionIcon,
+  CardActionIcons, CardActions, CardPrimaryAction
 } from '@rmwc/card'
 import { Typography } from '@rmwc/typography'
-import css from '../../public/styles.module.css'
 import { TopBar } from '../../components/TopBar'
 import { onAddFavorite, onClickMovieDetail } from '../../services/movie.service'
 import { MovieImage } from './components/MovieImage'
 import { MovieRevenue } from './components/MovieRevenue';
-import { YouTubeVideoButton } from './components/YouTubeVideoButton';
+import { WatchYouTubeVideo } from './components/WatchYouTubeVideo';
 import { Tooltip } from '@rmwc/tooltip'
 import { CONST } from '../../constants'
+import css from '../../public/styles.module.css'
 
 
 const MovieDetail = () => {
@@ -70,7 +67,7 @@ const MovieDetail = () => {
             </CardPrimaryAction>
             <CardActions>
               <CardActionButtons>
-                <YouTubeVideoButton videoId={videos[0]?.key}/>
+                <WatchYouTubeVideo videoId={videos[0]?.key}/>
               </CardActionButtons>
               <CardActionIcons>
                 <CardActionIcon onIcon="favorite" icon="favorite_border" onClick={onAddFavorite} />

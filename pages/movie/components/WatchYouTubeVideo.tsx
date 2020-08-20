@@ -5,7 +5,7 @@ interface YouTubeBtnProp {
   videoId: string
 }
 
-export const YouTubeVideoButton = ({ videoId }: YouTubeBtnProp) => (
+export const WatchYouTubeVideo = ({ videoId }: YouTubeBtnProp) => (
   (videoId?.length > 0) &&
   <a href={getVideoUrl(videoId)} target='_blank' rel='noopener'>
     <CardActionButton raised>Watch Video</CardActionButton>
