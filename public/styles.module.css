@@ -86,9 +86,9 @@
 }
 
 .fabBtn {
-  position: fixed;
-  right: 3.5rem;
-  bottom: 4rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
 }
 
 .fabBtnText {
