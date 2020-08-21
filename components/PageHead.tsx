@@ -26,8 +26,10 @@ const PageHead = ({ title, description, keywords, url, ogImage }: PageHeadProps)
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="theme-color" content="#317EFB" />
+    <link rel="preconnect" href="https://tmdb-graphql.com/" />
+    <link rel="dns-prefetch" href="https://tmdb-graphql.com/" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
