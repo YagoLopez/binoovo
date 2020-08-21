@@ -33,7 +33,7 @@ const Page = () => {
     if (totalPages === 0) return <NoResults message={CONST.NO_RESULTS}/>
     return (
       <>
-        <PageHead title={CONST.TITLE} />
+        <PageHead title={CONST.TITLE_MOVIE_LIST} />
         <TopBar title={'Movies Search Results'} showBackBtn={true} showHomeBtn={true} />
         <div className="responsive-card">
           <MovieList listData={results} imageData={images}/>

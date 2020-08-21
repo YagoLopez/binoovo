@@ -16,3 +16,7 @@ export const onClickMovieDetail = ({id, title}: {id: string, title: string}): vo
   const sluggedTitle = slug(title)
   window.open(`${CONST.MOVIEDB_DETAIL_BASE_URL}/${id}-${sluggedTitle}`)
 }
+
+export const openExternalLink = (url: string ): void => {
+  window.open(url)
+}

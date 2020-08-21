@@ -6,8 +6,11 @@ import { LinearProgress } from '@rmwc/linear-progress'
 import { Typography } from '@rmwc/typography'
 import { TextField } from '@rmwc/textfield'
 import { Button } from '@rmwc/button'
+import { Fab } from '@rmwc/fab'
 import css from '../public/styles.module.css'
 import PageHead from '../components/PageHead'
+import {openExternalLink} from "../services/movie.service";
+
 
 const Index = () => {
 
@@ -26,8 +29,8 @@ const Index = () => {
 
   return (
     <>
-      <PageHead title={CONST.TITLE} />
-      <TopBar title={CONST.TITLE} />
+      <PageHead title={CONST.TITLE_INDEX} />
+      <TopBar title={CONST.TITLE_INDEX} />
       { isLoading && <LinearProgress /> }
       <form onSubmit={onSearchMovie} className={css.form}>
         <main className={css.centerHor}>
@@ -54,11 +57,13 @@ const Index = () => {
                 https://tmdb-graphql.com
               </a>
             </div>
-            <p><Typography use="caption">Developed by Yago López</Typography></p>
-            <a href={CONST.LIGHTHOUSE_AUDIT_URL}
-               target="_blank" rel="noreferrer">
-              <Typography use="caption">Audit</Typography>
-            </a> →
+            <p>
+              <Typography use="caption">Developed by Yago López</Typography>
+            </p>
+            <div className={css.fabBtn} onClick={() => openExternalLink(CONST.LIGHTHOUSE_AUDIT_URL)}>
+              <Fab icon="assessment" theme={['primaryBg', 'onPrimary']} title="Audit Report"/>
+              <div className={css.fabBtnText}>Audit</div>
+            </div>
           </div>
         </main>
       </form>
