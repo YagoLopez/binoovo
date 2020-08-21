@@ -84,3 +84,15 @@
   text-align: left;
   padding: 10px;
 }
+
+.fabBtn {
+  position: fixed;
+  right: 3.5rem;
+  bottom: 4rem;
+}
+
+.fabBtnText {
+  font-size: small;
+  color: #6200ee;
+  padding: 0.3rem;
+}
