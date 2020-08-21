@@ -63,6 +63,10 @@ yarn build
 # run production build
 npm run start
 yarn start
+
+# update dependencies
+npm run update
+yarn update
 ```
 
 
