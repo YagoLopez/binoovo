@@ -28,7 +28,7 @@ describe('Test search functionality', () => {
 
 describe('Test pagination', () => {
 
-  it('Should return 7 pages for ' + searchTerm1, () => {
+  it('Should return 7 pages for search term:' + searchTerm1, () => {
     cy.visit('http://localhost:4000/movies-search/'+ searchTerm1 +'?page=1')
     cy.get('[data-cy=total-pages]').should('have.text', 'Total pages: 7')
   })
