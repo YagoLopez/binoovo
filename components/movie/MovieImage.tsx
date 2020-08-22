@@ -13,9 +13,9 @@ interface MovieImgProps {
 
 export const MovieImage = ({ data: {id, title, baseUrl, posterPath, posterSizes} }: MovieImgProps) => (
   posterPath &&
-  <CardMedia
-    square
-    onClick={() => onClickMovieDetail({ id, title })}
-    style={{backgroundImage: `url(${getImageUrl(baseUrl, posterSizes[2], posterPath)})`}}
-  />
+    <CardMedia
+      square
+      onClick={() => onClickMovieDetail({ id, title })}
+      style={{backgroundImage: `url(${getImageUrl(baseUrl, posterSizes[2], posterPath)})`}}
+    />
 )
