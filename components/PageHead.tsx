@@ -1,5 +1,5 @@
 import NextHead from 'next/head'
-import {CONST} from "../constants";
+import { CONST } from '../constants'
 
 interface PageHeadProps {
   title: string
@@ -9,16 +9,31 @@ interface PageHeadProps {
   ogImage?: string
 }
 
-const PageHead = ({ title, description, keywords, url, ogImage }: PageHeadProps) => (
+const PageHead = ({
+  title,
+  description,
+  keywords,
+  url,
+  ogImage,
+}: PageHeadProps) => (
   <NextHead>
     <meta charSet="UTF-8" />
     <title>{title || ''}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description || CONST.PAGE_HEAD_DEFAULT_DESCRIPTION} />
-    <meta name="keywords" content={keywords || CONST.PAGE_HEAD_DEFAULT_KEYWORDS} />
+    <meta
+      name="description"
+      content={description || CONST.PAGE_HEAD_DEFAULT_DESCRIPTION}
+    />
+    <meta
+      name="keywords"
+      content={keywords || CONST.PAGE_HEAD_DEFAULT_KEYWORDS}
+    />
     <meta property="og:url" content={url || CONST.PAGE_HEAD_OG_URL} />
     <meta property="og:title" content={title || ''} />
-    <meta property="og:description" content={description || CONST.PAGE_HEAD_DEFAULT_DESCRIPTION} />
+    <meta
+      property="og:description"
+      content={description || CONST.PAGE_HEAD_DEFAULT_DESCRIPTION}
+    />
     <meta name="twitter:site" content={url || CONST.PAGE_HEAD_OG_URL} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImage || CONST.PAGE_HEAD_OG_IMAGE} />

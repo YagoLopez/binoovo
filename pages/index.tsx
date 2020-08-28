@@ -29,7 +29,7 @@ const Index = () => {
     <>
       <PageHead title={CONST.TITLE_INDEX} />
       <TopBar title={CONST.TITLE_INDEX} />
-      { isLoading && <LinearProgress /> }
+      {isLoading && <LinearProgress />}
       <form onSubmit={onSearchMovie} className={css.form}>
         <main className={css.centerHor}>
           <label>
@@ -74,8 +74,7 @@ const Index = () => {
                 href="https://tmdb-graphql.com/"
                 target="_blank"
                 className={css.link}
-                rel="noopener"
-              >
+                rel="noopener">
                 https://tmdb-graphql.com
               </a>
             </div>
@@ -84,8 +83,7 @@ const Index = () => {
             </p>
             <div
               className={css.fabBtn}
-              onClick={() => openExternalLink(CONST.LIGHTHOUSE_AUDIT_URL)}
-            >
+              onClick={() => openExternalLink(CONST.LIGHTHOUSE_AUDIT_URL)}>
               <Fab
                 icon="assessment"
                 theme={['primaryBg', 'onPrimary']}
