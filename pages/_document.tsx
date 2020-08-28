@@ -5,12 +5,22 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500"
-            rel="prefetch" as="style" media="all" crossOrigin="anonymous"/>
-          <link href="//fonts.googleapis.com/icon?family=Material+Icons&display=swap"
-            rel="stylesheet" media="all" />
+          <link
+            href="//fonts.googleapis.com/css?family=Roboto:300,400,500"
+            rel="prefetch"
+            as="style"
+            media="all"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="//fonts.googleapis.com/icon?family=Material+Icons&display=swap"
+            rel="stylesheet"
+            media="all"
+          />
         </Head>
-        <body style={{margin: 0}} className="mdc-typography">
+        <body
+          className="mdc-typography"
+          style={{ margin: 0, background: '#f6f6f6', height: '88vh' }}>
           <Main />
           <NextScript />
         </body>
