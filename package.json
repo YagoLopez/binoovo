@@ -9,6 +9,7 @@
     "start": "next start",
     "cypress:test": "cypress run --headed --config video=false",
     "test": "run-p dev:test cypress:test",
+    "update:check": "yarn outdated",
     "update": "npx npm-check-updates -u && yarn install"
   },
   "dependencies": {
