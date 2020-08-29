@@ -45,8 +45,12 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 ```bash
 # install dependencies
-npm install  # using npm or
+npm install  # using npm, or
 yarn install # using yarn
+
+# list scripts
+npm run  # using npm, or
+yarn run # using yarn
 
 # serve at localhost:3000
 npm run dev
