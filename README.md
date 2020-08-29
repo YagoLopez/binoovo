@@ -41,7 +41,7 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 - https://binoovo.vercel.app/audit/report.html
 
-## Run and build
+## Scripts
 
 ```bash
 # install dependencies
