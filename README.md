@@ -39,7 +39,7 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 ## Audit
 
-- https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fbinoovo.vercel.app
+- https://binoovo.vercel.app/audit/report.html
 
 ## Run and build
 
