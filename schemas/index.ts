@@ -1,4 +1,4 @@
-import {gql} from "apollo-boost";
+import { gql } from 'apollo-boost'
 
 export const GET_MOVIES = gql`
   query AllMovies($searchterm: String!, $page: Int) {
@@ -22,7 +22,7 @@ export const GET_MOVIES = gql`
 `
 
 export const GET_MOVIE = gql`
-  query ($id: ID!){
+  query($id: ID!) {
     movie(id: $id) {
       overview
       cast {
