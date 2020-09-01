@@ -27,7 +27,7 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 - Mobile first responsive design
 
-- Use of [CSS modules](https://css-tricks.com/css-modules-part-1-need/)
+- Use of [CSS modules](https://github.com/css-modules/css-modules)
 
 - Material Design
 
@@ -48,7 +48,7 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 npm install  # using npm, or
 yarn install # using yarn
 
-# list scripts
+# list available scripts
 npm run  # using npm, or
 yarn run # using yarn
 
@@ -67,6 +67,10 @@ yarn build
 # run production build
 npm run start
 yarn start
+
+# check for outdated dependencies
+npm run update:check
+yarn update:chek
 
 # update dependencies
 npm run update
