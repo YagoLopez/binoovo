@@ -27,3 +27,21 @@
 input.mdc-text-field__input {
   background: white !important;
 }
+
+div.mdc-dialog__surface {
+  height: 100vh;
+  width: 100vw;
+}
+
+.mdc-dialog__content {
+  padding: 0;
+  margin: 0;
+}
+
+.iframeMovieDetail {
+  border: 0;
+}
+
+.mdc-dialog__content {
+  overflow: hidden;
+}

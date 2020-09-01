@@ -10,6 +10,16 @@ module.exports = (phase, { defaultConfig }) => {
     })
   }
   return {
+
+    async rewrites() {
+      return [
+        {
+          source: '/test3',
+          destination: 'https://www.themoviedb.org/movie/686-contact',
+        },
+      ]
+    },
+
     env: []
   }
 }
