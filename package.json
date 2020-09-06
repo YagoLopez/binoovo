@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "cypress:test": "cypress run --headed",
-    "test": "run-p dev:test cypress:test",
+    "cypress:run": "cypress open",
+    "test": "start-server-and-test dev:test http://localhost:4000 cypress:test",
     "update:check": "echo 'Checking for outdated dependencies...' && yarn outdated",
     "update": "npx npm-check-updates -u && yarn install"
   },
@@ -21,7 +22,6 @@
     "next": "9.5.3",
     "next-apollo": "5.0.0",
     "next-pwa": "^3.1.3",
-    "npm-run-all": "^4.1.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "rmwc": "^6.1.3",
@@ -32,6 +32,7 @@
     "@types/react": "16.9.49",
     "cypress": "5.1.0",
     "prettier": "2.1.1",
+    "start-server-and-test": "^1.11.3",
     "typescript": "^4.0.2"
   }
 }
