@@ -18,7 +18,9 @@ class MyDocument extends Document {
             media="all"
           />
         </Head>
-        <body style={{ margin: 0, background: '#f6f6f6', height: '88vh' }}>
+        <body
+          className="mdc-typography"
+          style={{ margin: 0, background: '#f6f6f6', height: '88vh' }}>
           <Main />
           <NextScript />
         </body>
