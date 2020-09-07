@@ -17,7 +17,7 @@ import { Typography } from '@rmwc/typography'
 import { Tooltip } from '@rmwc/tooltip'
 import { Button } from '@rmwc/button'
 import { TopBar } from '../../components/TopBar'
-import { getMovieDetailUrl, onAddFavorite, onClickMovieDetail } from "../../services/movie.service";
+import { getMovieDetailUrl, getVideoUrl, onAddFavorite, onClickMovieDetail } from "../../services/movie.service";
 import { MovieImage } from '../../components/movie/MovieImage'
 import { MovieRevenue } from '../../components/movie/MovieRevenue'
 import { MovieDialog } from '../../components/movie/MovieDialog'
@@ -91,13 +91,18 @@ const MovieDetail = () => {
                     tag="div"
                     theme="textSecondaryOnBackground">
                     { overview }
+                    <div>is dialog open: {isDialogOpen.toString()}</div>
+                    <div>youtube url: {JSON.stringify(videos[0], null, 2)}</div>
                   </Typography>
                 </div>
               </Tooltip>
             </CardPrimaryAction>
             <CardActions>
               <CardActionButtons>
-                <WatchYouTubeVideo videoId={videos[0]?.key} />
+                {/*<WatchYouTubeVideo videoId={videos[0]?.key} />*/}
+                <Button raised onClick={() => setDialogOpen(true)}>
+                  Watch Video
+                </Button>
                 <Button raised onClick={() => setDialogOpen(true)}>
                   Open Detail Dialog
                 </Button>
@@ -113,13 +118,15 @@ const MovieDetail = () => {
             </CardActions>
           </Card>
         </div>
-        <MovieDialog
-          open={isDialogOpen}
-          title={CONST.DIALOG.DETAILS_TITLE}
-          onSetDialogOpen={setDialogOpen}
-          url={getMovieDetailUrl(id, title)}>
-            <div>test</div>
-        </MovieDialog>
+        {
+          (videos?.length > 0) &&
+            <MovieDialog
+              open={isDialogOpen}
+              title={CONST.DIALOG.VIDEO}
+              onSetDialogOpen={setDialogOpen}
+              url={getVideoUrl(videos[0].key)}>
+            </MovieDialog>
+        }
       </>
     )
   }

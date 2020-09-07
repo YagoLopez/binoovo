@@ -1,8 +1,8 @@
 const withPWA = require('next-pwa')
 const { PHASE_PRODUCTION_BUILD } = require('next/constants')
 
-// If is prod build then create PWA infrastructure
-module.exports = (phase, { defaultConfig }) => {
+// If compile phase is prod build then create PWA infrastructure
+module.exports = (phase) => {
 
   if (phase === PHASE_PRODUCTION_BUILD) {
     return withPWA({
@@ -10,16 +10,6 @@ module.exports = (phase, { defaultConfig }) => {
     })
   }
   return {
-
-    async rewrites() {
-      return [
-        {
-          source: '/test3',
-          destination: 'https://www.themoviedb.org/movie/686-contact',
-        },
-      ]
-    },
-
     env: []
   }
 }

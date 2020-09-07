@@ -23,15 +23,16 @@ export const MovieDialog = ({
   url,
 }: MovieDialogProps) => (
   <Dialog open={open} onClosed={(evt) => onSetDialogOpen(false)}>
-    <DialogTitle>{title}</DialogTitle>
+    <DialogTitle>{ title }</DialogTitle>
     <DialogContent>
-      <iframe src={'/api/redirection/686-contact'} width="100%" height="100%" className="iframeMovieDetail"></iframe>
+      <iframe
+        src={url}
+        width="100%"
+        height="100%"
+        className="iframeDialog"></iframe>
     </DialogContent>
     <DialogActions>
       <DialogButton action="close">Close</DialogButton>
-      <DialogButton action="accept" isDefaultAction>
-        Accept
-      </DialogButton>
     </DialogActions>
   </Dialog>
 )
