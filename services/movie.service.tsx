@@ -12,15 +12,14 @@ export const onAddFavorite = () => {
   alert(CONST.ADD_FAVORITES_MSG)
 }
 
-export const onClickMovieDetail = (id: string, title: string): void => {
-  window.open(getMovieDetailUrl(id, title))
+export const onClickMovieDetail = (movieId: string, title: string): void => {
+  window.open(getMovieDetailUrl(movieId, title))
 }
 
-export const getMovieDetailUrl = (id: string, title: string): string => {
+export const getMovieDetailUrl = (movieId: string, title: string): string => {
   const sluggedTitle = slug(title)
-  return `${CONST.MOVIEDB_DETAIL_BASE_URL}/${id}-${sluggedTitle}`
+  return `${CONST.MOVIEDB_DETAIL_BASE_URL}/${movieId}-${sluggedTitle}`
 }
-
 
 export const openExternalLink = (url: string ): void => {
   window.open(url)

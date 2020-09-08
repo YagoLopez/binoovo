@@ -27,17 +27,24 @@ import css from '../../public/styles.module.css'
 
 const MovieDetail = () => {
   const router = useRouter()
-  const { id } = router.query as { id: string; asPath: string }
+  // const { id } = router.query as { id: string; asPath: string }
+  const [ movieId, urlSegment ] = router.query.details as string[]
   const [ isDialogOpen, setDialogOpen ] = useState(false)
+  const ytVideoId = router.asPath.split('#')[1]
 
-  // Executes qraphql query to get movie details by id
+  // console.warn('movieId, urlSegment, ytVideoId', movieId, urlSegment, ytVideoId)
+  console.warn('ytVideoId', ytVideoId)
+  // console.warn('isDialogOpen', isDialogOpen)
+
+  // Executes qraphql query to get movie details by movieId
   const { loading, error, data } = useQuery(GET_MOVIE, {
-    variables: { id },
+    variables: { id: movieId },
     notifyOnNetworkStatusChange: true,
   })
 
   if (loading) return <LinearProgress />
   if (error) return <NoResults message={error.message} />
+  // if (ytVideoId && !isDialogOpen) setDialogOpen(true)
 
   if (data) {
     const { baseUrl, posterSizes } = data.configuration.images
@@ -62,12 +69,12 @@ const MovieDetail = () => {
           <Card className="movieCard">
             <CardPrimaryAction>
               <MovieImage
-                data={{ id, title, posterPath, baseUrl, posterSizes }}
+                data={{ movieId, title, posterPath, baseUrl, posterSizes }}
               />
               <Tooltip content={CONST.TOOLTIP_DETAIL_INFO} align="topRight">
                 <div
                   className={css.movieCardContent}
-                  onClick={() => onClickMovieDetail(id, title)}>
+                  onClick={() => onClickMovieDetail(movieId, title)}>
                   <Typography use="headline6" tag="h2">
                     { title }
                   </Typography>
@@ -99,13 +106,21 @@ const MovieDetail = () => {
             </CardPrimaryAction>
             <CardActions>
               <CardActionButtons>
-                {/*<WatchYouTubeVideo videoId={videos[0]?.key} />*/}
-                <Button raised onClick={() => setDialogOpen(true)}>
+                {/*<WatchYouTubeVideo ytVideoId={videos[0]?.key} />*/}
+                {/*<Button raised onClick={() => router.push(movieId + '/modal/' + videos[0].key)}>*/}
+                <Button raised onClick={() =>
+                {
+                  // debugger
+                  router.push(movieId + '#' + videos[0].key)
+                  // router.push(movieId)
+                }}>
                   Watch Video
                 </Button>
+{/*
                 <Button raised onClick={() => setDialogOpen(true)}>
                   Open Detail Dialog
                 </Button>
+*/}
               </CardActionButtons>
               <CardActionButtons></CardActionButtons>
               <CardActionIcons>
@@ -119,11 +134,10 @@ const MovieDetail = () => {
           </Card>
         </div>
         {
-          (videos?.length > 0) &&
+          // todo: review this edge case
+          // (videos?.length > 0) &&
             <MovieDialog
-              open={isDialogOpen}
-              title={CONST.DIALOG.VIDEO}
-              onSetDialogOpen={setDialogOpen}
+              open={!!ytVideoId}
               url={getVideoUrl(videos[0].key)}>
             </MovieDialog>
         }

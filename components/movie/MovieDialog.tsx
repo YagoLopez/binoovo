@@ -3,36 +3,43 @@ import {
   DialogActions,
   DialogButton,
   DialogContent,
-  DialogTitle,
 } from '@rmwc/dialog'
-import { ReactNode } from 'react'
+import { ReactNode, useRef } from 'react'
+import { useRouter } from 'next/router'
 
 interface MovieDialogProps {
   open: boolean
-  title: string
-  children: ReactNode
-  onSetDialogOpen: Function
   url: string
+  children: ReactNode
 }
 
-export const MovieDialog = ({
-  open,
-  title,
-  children,
-  onSetDialogOpen,
-  url,
-}: MovieDialogProps) => (
-  <Dialog open={open} onClosed={(evt) => onSetDialogOpen(false)}>
-    <DialogTitle>{ title }</DialogTitle>
-    <DialogContent>
-      <iframe
-        src={url}
-        width="100%"
-        height="100%"
-        className="iframeDialog"></iframe>
-    </DialogContent>
-    <DialogActions>
-      <DialogButton action="close">Close</DialogButton>
-    </DialogActions>
-  </Dialog>
-)
+interface IframeRef {
+  current: HTMLIFrameElement
+}
+
+export const MovieDialog = ({ open, url }: MovieDialogProps) => {
+  const router = useRouter()
+  const iframeRef: IframeRef = useRef(null)
+
+  const onCloseDialog = (iframeRef: IframeRef) => {
+    // Needed to stop video playing when modal dialog is closed
+    iframeRef.current.src = iframeRef.current.src
+    router.back()
+  }
+
+  return (
+    <Dialog open={open} onClosed={() => onCloseDialog(iframeRef)}>
+      <DialogContent>
+        <iframe
+          ref={iframeRef}
+          src={url}
+          width="100%"
+          height="100%"
+          className="iframeDialog"></iframe>
+      </DialogContent>
+      <DialogActions>
+        <DialogButton action="close">Close</DialogButton>
+      </DialogActions>
+    </Dialog>
+  )
+}

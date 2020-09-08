@@ -44,4 +44,6 @@ div.mdc-dialog__surface {
 
 .mdc-dialog__content {
   overflow: hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }

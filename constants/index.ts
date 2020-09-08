@@ -15,7 +15,4 @@ export const CONST = {
   PAGE_HEAD_DEFAULT_KEYWORDS: "Search Movies, GraphQL, Nextjs, React, SSR, Server-Side-Rendering, API",
   PAGE_HEAD_OG_URL: "",
   PAGE_HEAD_OG_IMAGE: "",
-  DIALOG: {
-    VIDEO: "Movie Teaser"
-  }
 }
