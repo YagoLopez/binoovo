@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 interface MovieDialogProps {
   open: boolean
   url: string
-  children: ReactNode
+  children?: ReactNode
 }
 
 interface IframeRef {
