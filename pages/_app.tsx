@@ -16,6 +16,7 @@ import '@rmwc/icon/icon.css'
 import '@rmwc/theme/theme.css'
 import '@rmwc/tooltip/tooltip.css'
 import '@material/fab/dist/mdc.fab.css'
+import '@material/dialog/dist/mdc.dialog.css'
 import '../public/responsive.css'
 
 const App = ({ Component, pageProps }) => <Component {...pageProps} />

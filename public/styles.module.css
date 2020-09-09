@@ -41,13 +41,6 @@
   font-size: small;
 }
 
-.movieDetailPage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 3rem;
-}
-
 .movieCardContent {
   padding: 0 1rem 1rem 1rem;
 }
@@ -95,4 +88,8 @@
   font-size: small;
   color: #6200ee;
   padding: 0.3rem;
+}
+
+.movieDetailBtn {
+  margin-left: 8px;
 }

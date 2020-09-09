@@ -1,11 +1,14 @@
-import Link from 'next/link'
-import styles from '../public/styles.module.css'
+import { useRouter } from 'next/router'
+import css from '../public/styles.module.css'
 
 export const NoResults = ({ message }) => {
+  const router = useRouter()
+  const onGoBack = () => router.back()
+
   return (
-    <div className={styles.centerHorVer}>
+    <div className={css.centerHorVer}>
       <p data-cy="no-results-msg">{message}</p>
-      <div><Link href="/"><a>⇦ Back to Home Page</a></Link></div>
+      <div><a href="#" onClick={onGoBack}>⇦ Go Back</a></div>
     </div>
   )
 }

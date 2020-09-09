@@ -7,7 +7,7 @@ export const CONST = {
   TITLE_MOVIE_LIST: "Movies Search Results",
   INPUT_SEARCH_PLACEHOLDER: "Movie",
   MOVIEDB_DETAIL_BASE_URL: "https://www.themoviedb.org/movie",
-  YOUTUBE_VID_URL: "https://www.youtube.com/watch?v=",
+  YOUTUBE_VID_URL: "https://www.youtube.com/embed/",
   TOOLTIP_DETAIL_INFO: "Click for more info",
   LIGHTHOUSE_AUDIT_URL: "audit/report.html",
   MOVIE_DETAILS_TITLE: "Movie Details",

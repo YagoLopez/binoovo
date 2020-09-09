@@ -3,6 +3,13 @@
   margin-bottom: 3rem;
 }
 
+.movieDetailPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
 @media only screen and (min-width: 750px) {
   .responsive-card {
     width: 65%;
@@ -22,8 +29,32 @@
     width: 35%;
   }
 
+  .movieDetailPage {
+    margin-top: 3rem;
+  }
+
 }
 
 input.mdc-text-field__input {
   background: white !important;
+}
+
+div.mdc-dialog__surface {
+  height: 100vh;
+  width: 100vw;
+}
+
+.mdc-dialog__content {
+  padding: 0;
+  margin: 0;
+}
+
+.iframeDialog {
+  border: 0;
+}
+
+.mdc-dialog__content {
+  overflow: hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
