@@ -26,27 +26,26 @@ const Page = () => {
 
   if (loading) return <LinearProgress/>
   if (error) return <NoResults message={error.message}/>
-  if (data) {
-    const { totalPages, page, results } = data.allMovies
-    const { images } = data.configuration
-    if (!isPageNumberInRange(page, totalPages)) return <NoResults message={CONST.PAGE_OUT_RANGE}/>
-    if (totalPages === 0) return <NoResults message={CONST.NO_RESULTS}/>
-    return (
-      <>
-        <PageHead title={CONST.TITLE_MOVIE_LIST} />
-        <TopBar title={'Movies Search Results'} showBackBtn={true} showHomeBtn={true} />
-        <div className="responsive-card">
-          <MovieList listData={results} imageData={images}/>
-          <Pagination
-            page={page}
-            totalPages={totalPages}
-            searchterm={searchterm}
-            getPageNumber={getPageNumber}
-          />
-        </div>
-      </>
-    )
-  }
+
+  const { totalPages, results } = data?.allMovies
+  const { images } = data?.configuration
+  if (!isPageNumberInRange(page, totalPages)) return <NoResults message={CONST.PAGE_OUT_RANGE}/>
+  if (totalPages === 0) return <NoResults message={CONST.NO_RESULTS}/>
+  return (
+    <>
+      <PageHead title={CONST.TITLE_MOVIE_LIST} />
+      <TopBar title={'Movies Search Results'} showBackBtn={true} showHomeBtn={true} />
+      <div className="responsive-card">
+        <MovieList listData={results} imageData={images}/>
+        <Pagination
+          page={page}
+          totalPages={totalPages}
+          searchterm={searchterm}
+          getPageNumber={getPageNumber}
+        />
+      </div>
+    </>
+  )
 }
 
 export default withApollo({ ssr: true })(Page)
