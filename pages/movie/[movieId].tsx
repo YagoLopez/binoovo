@@ -63,7 +63,7 @@ const MovieDetail = () => {
           showBackBtn={true}
           showHomeBtn={true}
         />
-        <div className={css.movieDetailPage}>
+        <div className="movieDetailPage">
           <Card className="movieCard">
             <CardPrimaryAction>
               <MovieImage
