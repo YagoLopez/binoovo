@@ -1,6 +1,6 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/YagoLopez/binoovo)
 
-# Binoovo Search Movies App
+# Binoovo Movie Search App
 
 - This app consumes the API: https://www.themoviedb.org/documentation/api  
 using the GraphQL endpoint: https://tmdb-graphql.com
