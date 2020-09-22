@@ -11,7 +11,7 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           <link
-            href="//fonts.googleapis.com/icon?family=Material+Icons&display=swap"
+            href="/font/material-icons.woff2"
             rel="stylesheet"
             media="all"
           />
