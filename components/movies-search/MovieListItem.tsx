@@ -25,7 +25,7 @@ export const MovieListItem = ({ movieData, baseUrl, imgSize }) => {
   return (
     <Link href="/movie/[id]" as={`/movie/${id}`}>
       <ListItem>
-        <img src={getImageUrl(posterPath)} className={styles.listItemImg} alt=""/>
+        <img loading="lazy" src={getImageUrl(posterPath)} className={styles.listItemImg} alt=""/>
         <ListItemText>
           <ListItemPrimaryText>{ title }</ListItemPrimaryText>
           <ListItemSecondaryText>Popularity: { popularity } %</ListItemSecondaryText>
