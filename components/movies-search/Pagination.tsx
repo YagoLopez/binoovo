@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { Button } from '@rmwc/button'
-import css from '../../public/styles.module.css'
+import css from '../../styles/styles.module.css'
 
 export const Pagination = ({ page, totalPages, searchterm, getPageNumber }) => {
 

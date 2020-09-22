@@ -1,5 +1,5 @@
 import { Typography } from '@rmwc/typography'
-import css from '../../public/styles.module.css'
+import css from '../../styles/styles.module.css'
 
 interface RevenueProps {
   revenue: string | number
