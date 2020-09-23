@@ -1,5 +1,3 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/YagoLopez/binoovo)
-
 # Binoovo Movie Search App
 
 - This app consumes the API: https://www.themoviedb.org/documentation/api  
@@ -37,7 +35,12 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 - https://binoovo.vercel.app/
 
-![Scan QRcode](binoovo-qrcode.png)
+  ![Scan QRcode](binoovo-qrcode.png)
+  
+- [Open and run project online](https://codesandbox.io/github/YagoLopez/binoovo):
+    
+  ![CodeSandBox](https://img.shields.io/badge/-CodeSandbox-blue?style=rounded&logo=CodeSandBox)
+  
 
 ## Audit
 
