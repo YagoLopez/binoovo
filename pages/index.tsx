@@ -8,7 +8,7 @@ import { TextField } from '@rmwc/textfield'
 import { Button } from '@rmwc/button'
 import { Fab } from '@rmwc/fab'
 import { openExternalLink } from '../services/movie.service'
-import css from '../public/styles.module.css'
+import css from '../styles/styles.module.css'
 import PageHead from '../components/PageHead'
 
 const Index = () => {

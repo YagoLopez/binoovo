@@ -17,8 +17,13 @@ import '@rmwc/theme/theme.css'
 import '@rmwc/tooltip/tooltip.css'
 import '@material/fab/dist/mdc.fab.css'
 import '@material/dialog/dist/mdc.dialog.css'
-import '../public/responsive.css'
+import '../styles/responsive.css'
 
+export function reportWebVitals(metric) {
+  if (metric.label === 'custom') {
+    console.log(metric);
+  }
+}
 const App = ({ Component, pageProps }) => <Component {...pageProps} />
 
 export default App

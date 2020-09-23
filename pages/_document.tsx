@@ -6,10 +6,8 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
-            href="//fonts.googleapis.com/css?family=Roboto:300,400,500"
-            rel="prefetch"
-            as="style"
-            media="all"
+            href="/font/roboto-v20-latin-regular.woff2"
+            as="font"
             crossOrigin="anonymous"
           />
           <link

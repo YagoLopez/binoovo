@@ -7,17 +7,17 @@
     "dev:test": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
-    "cypress:test": "cypress run --headed",
+    "cypress:test": "echo 'Loading...' & cypress run --headed",
     "cypress:run": "cypress open",
     "test": "start-server-and-test dev:test http://localhost:4000 cypress:test",
-    "update:check": "echo 'Checking for outdated dependencies...' && npx npm-check-updates",
+    "update:check": "echo 'Checking for outdated dependencies...' & npx npm-check-updates",
     "update:make": "npx npm-check-updates -u && yarn install"
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
     "@apollo/react-ssr": "^4.0.0",
     "apollo-boost": "^0.4.9",
-    "apollo-server-micro": "2.17.0",
+    "apollo-server-micro": "2.18.0",
     "graphql": "^15.3.0",
     "next": "9.5.3",
     "next-apollo": "5.0.0",
@@ -33,6 +33,6 @@
     "cypress": "5.1.0",
     "prettier": "2.1.2",
     "start-server-and-test": "^1.11.4",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.3"
   }
 }

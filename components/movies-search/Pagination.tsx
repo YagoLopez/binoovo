@@ -1,25 +1,20 @@
 import { useRouter } from 'next/router'
-import { useState } from 'react'
 import { Button } from '@rmwc/button'
-import { LinearProgress } from '@rmwc/linear-progress'
-import css from '../../public/styles.module.css'
+import css from '../../styles/styles.module.css'
 
 export const Pagination = ({ page, totalPages, searchterm, getPageNumber }) => {
 
   const router = useRouter()
-  const [isLoading, setIsLoading] = useState(false)
   const isFirstPage = (currentPage: string) => +currentPage <= 1 || currentPage === undefined
   const isLastPage = (currentPage: string, totalPages: string) => +currentPage >= +totalPages
 
   const goNextPage = (currentPage: string, totalPages: string) => {
-    setIsLoading(true)
     if (!isLastPage(currentPage, totalPages)) {
       router.push(`/movies-search/${searchterm}?page=${getPageNumber(currentPage) + 1}`)
     }
   }
 
   const goPreviousPage = (currentPage: string) => {
-    setIsLoading(true)
     if (!isFirstPage(currentPage)) {
       router.push(`/movies-search/${searchterm}?page=${getPageNumber(currentPage) - 1}`)
     }
@@ -28,7 +23,6 @@ export const Pagination = ({ page, totalPages, searchterm, getPageNumber }) => {
   return (
     <div className={css.paginationCentered}>
       <div>
-        { isLoading && <LinearProgress progress={0} /> }
         {
           !isFirstPage(page) &&
             <Button
