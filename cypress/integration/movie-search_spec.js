@@ -10,13 +10,13 @@ describe('Test index page', () => {
 
 describe('Test search functionality', () => {
 
-  it('Should return results for '+ searchTerm1 +' search string', () => {
+  it('Should return results for "'+ searchTerm1 +'" search string', () => {
     cy.visit('/')
     cy.get('input.mdc-text-field__input').type(searchTerm1)
     cy.get('button[type="submit"]').click().get('ul.mdc-list')
   })
 
-  it('Should not return results for '+ searchTerm2 +' search string', () => {
+  it('Should not return results for "'+ searchTerm2 +'" search string', () => {
     cy.visit('/')
     cy.get('input.mdc-text-field__input').type(searchTerm2)
     cy.get('button[type="submit"]').click().get('[data-cy=no-results-msg]')
@@ -26,7 +26,7 @@ describe('Test search functionality', () => {
 
 describe('Test pagination', () => {
 
-  it('Should return 7 pages for search term:' + searchTerm1, () => {
+  it('Should return 7 pages for search term:"' + searchTerm1 +'"', () => {
     cy.visit('/movies-search/'+ searchTerm1 +'?page=1')
     cy.get('[data-cy=total-pages]').should('have.text', 'Total pages: 7')
   })
