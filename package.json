@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "echo Loading... & next dev",
     "dev:test": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
     "@apollo/react-ssr": "^4.0.0",
+    "@tjoskar/react-lazyload-img": "^1.2.3",
     "apollo-boost": "^0.4.9",
     "apollo-server-micro": "2.18.0",
     "graphql": "^15.3.0",

@@ -6,7 +6,8 @@ import {
   ListItemSecondaryText,
   ListItemText
 } from '@rmwc/list'
-import styles from '../../styles/styles.module.css'
+import { LazyLoadImage } from '@tjoskar/react-lazyload-img'
+import { LAZY_IMG_STYLE } from '../../styles/lazy-img-style'
 
 export const MovieListItem = ({ movieData, baseUrl, imgSize }) => {
 
@@ -25,7 +26,13 @@ export const MovieListItem = ({ movieData, baseUrl, imgSize }) => {
   return (
     <Link href="/movie/[id]" as={`/movie/${id}`}>
       <ListItem>
-        <img loading="lazy" src={getImageUrl(posterPath)} className={styles.listItemImg} alt=""/>
+        <LazyLoadImage
+          width="92px"
+          height="92px"
+          style={LAZY_IMG_STYLE}
+          defaultImage='/imgPlaceholder.png'
+          image={getImageUrl(posterPath)}
+          alt="" />
         <ListItemText>
           <ListItemPrimaryText>{ title }</ListItemPrimaryText>
           <ListItemSecondaryText>Popularity: { popularity } %</ListItemSecondaryText>
