@@ -29,7 +29,9 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 - Use of [CSS modules](https://github.com/css-modules/css-modules)
 
-- Material Design
+- [Lazy loading images](https://web.dev/lazy-loading/) (Better performance and UX)
+
+- React [Material Design](https://rmwc.io/)
 
 ## Demo
 
