@@ -40,6 +40,7 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 - [Open and run project online](https://codesandbox.io/github/YagoLopez/binoovo):
     
   [![Edit YagoLopez/binoovo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/YagoLopez/binoovo/tree/master/?fontsize=14&hidenavigation=1&theme=dark)
+
 ## Audit
 
 - https://binoovo.vercel.app/audit/report.html
