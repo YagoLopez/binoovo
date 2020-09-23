@@ -7,7 +7,7 @@
     "dev:test": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
-    "cypress:test": "echo 'Loading...' & cypress run --headed",
+    "cypress:test": "echo Loading... & cypress run --headed",
     "cypress:run": "cypress open",
     "test": "start-server-and-test dev:test http://localhost:4000 cypress:test",
     "update:check": "echo 'Checking for outdated dependencies...' & npx npm-check-updates",
