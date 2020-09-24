@@ -19,11 +19,13 @@ import '@material/fab/dist/mdc.fab.css'
 import '@material/dialog/dist/mdc.dialog.css'
 import '../public/styles/responsive.css'
 
-export function reportWebVitals(metric) {
-  if (metric.label === 'custom') {
-    console.log(metric);
-  }
-}
+// Uncomment for perf tests
+// export function reportWebVitals(metric) {
+//   if (metric.label === 'custom') {
+//     console.log(metric);
+//   }
+// }
+
 const App = ({ Component, pageProps }) => <Component {...pageProps} />
 
 export default App
