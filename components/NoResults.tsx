@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import css from '../styles/styles.module.css'
+import css from '../public/styles/styles.module.css'
 
 export const NoResults = ({ message }) => {
   const router = useRouter()

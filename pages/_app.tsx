@@ -17,7 +17,7 @@ import '@rmwc/theme/theme.css'
 import '@rmwc/tooltip/tooltip.css'
 import '@material/fab/dist/mdc.fab.css'
 import '@material/dialog/dist/mdc.dialog.css'
-import '../styles/responsive.css'
+import '../public/styles/responsive.css'
 
 export function reportWebVitals(metric) {
   if (metric.label === 'custom') {

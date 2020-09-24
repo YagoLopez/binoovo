@@ -27,7 +27,7 @@ import { MovieImage } from '../../components/movie/MovieImage'
 import { MovieRevenue } from '../../components/movie/MovieRevenue'
 import { MovieDialog } from '../../components/movie/MovieDialog'
 import { CONST } from '../../constants'
-import css from '../../styles/styles.module.css'
+import css from '../../public/styles/styles.module.css'
 
 const MovieDetail = () => {
   const router = useRouter()

@@ -7,7 +7,7 @@ import {
   ListItemText
 } from '@rmwc/list'
 import { LazyLoadImage } from '@tjoskar/react-lazyload-img'
-import { LAZY_IMG_STYLE } from '../../styles/lazy-img-style'
+import { LAZY_IMG_STYLE } from '../../public/styles/lazy-img-style'
 
 export const MovieListItem = ({ movieData, baseUrl, imgSize }) => {
 
