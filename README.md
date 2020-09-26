@@ -7,13 +7,13 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 ## Features
 
-- EcmaScript 6 (ES6)
+- [Arquitectura JAMStack](https://www.netlify.com/jamstack/)
 
 - Functional programming
 
-- ReactJS
-
 - [GraphQL](https://dev.to/leonardomso/why-graphql-is-the-future-of-apis-3632)
+
+- ReactJS
 
 - [React Hooks](https://es.reactjs.org/docs/hooks-intro.html)
 
