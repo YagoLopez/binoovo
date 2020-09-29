@@ -7846,10 +7846,10 @@ slice-ansi@0.0.4:
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
   integrity sha1-7b+JA/ZvfOL46v1s7tZeJkyDGzU=
 
-slug@^3.3.4:
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/slug/-/slug-3.3.4.tgz#bde453bee60587505f312c68738b8df21e5d388f"
-  integrity sha512-VpHbtRCEWmgaZsrZcTsVl/Dhw98lcrOYDO17DNmJCNpppI6s3qJvnNu2Q3D4L84/2bi6vkW40mjNQI9oGQsflg==
+slug@^3.3.5:
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/slug/-/slug-3.3.5.tgz#4c6efd39b148b34a78fccda49e684a82e983e81a"
+  integrity sha512-d/9yTbJDtSIhJThaNRP/U5uxwCl0mWIlV42JmKSfvg8t7DiVt69G8rAWTc0FWhaQOier0fiNAWVs7ctvVhK1RA==
 
 snapdragon-node@^2.0.1:
   version "2.1.1"
