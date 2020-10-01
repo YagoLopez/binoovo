@@ -74,7 +74,7 @@ const Index = () => {
                 href="https://tmdb-graphql.com/"
                 target="_blank"
                 className={css.link}
-                rel="noopener">
+                rel="noopener noreferrer">
                 https://tmdb-graphql.com
               </a>
             </div>
