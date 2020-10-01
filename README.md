@@ -7,7 +7,7 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 ## Features
 
-- [Arquitectura JAMStack](https://www.netlify.com/jamstack/)
+- [JAMStack Architecture](https://www.netlify.com/jamstack/)
 
 - Functional programming
 
