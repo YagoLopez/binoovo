@@ -13,9 +13,7 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 - [GraphQL](https://dev.to/leonardomso/why-graphql-is-the-future-of-apis-3632)
 
-- ReactJS
-
-- [React Hooks](https://es.reactjs.org/docs/hooks-intro.html)
+- ReactJS and [React Hooks](https://es.reactjs.org/docs/hooks-intro.html)
 
 - Server Side Rendering with [Nextjs](https://nextjs.org/)
 
@@ -35,13 +33,16 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 ## Demo
 
-- https://binoovo.vercel.app/
-
+- [Run app in production mode](https://binoovo.vercel.app/).
+  Use this link or the following QR code:
+  
   ![Scan QRcode](binoovo-qrcode.png)
   
-- [Open and run project online](https://codesandbox.io/github/YagoLopez/binoovo):
-    
-  [![Edit YagoLopez/binoovo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/determined-dubinsky-811sg)
+- [Open and run project](https://811sg.sse.codesandbox.io/):
+  **Note**: This option will run the project in a Docker container in development mode whitout
+  build optimizations. It will be a bit slower than the production version  
+  
+  [![Edit YagoLopez/binoovo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/binoovo-movie-search-811sg)
 
 ## Audit
 
@@ -58,7 +59,7 @@ yarn install # using yarn
 npm run  # using npm, or
 yarn run # using yarn
 
-# serve at localhost:3000
+# run and serve at localhost:3000
 npm run dev
 yarn dev
 
