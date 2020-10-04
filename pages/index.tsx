@@ -80,10 +80,22 @@ const Index = () => {
             </div>
             <p>
               <Typography use="caption">
-                <a href="https://yagolopez.js.org" target="_blank">
-                  Developed by Yago López
-                </a>
+                <div>
+                  <a href="https://yagolopez.js.org" target="_blank">
+                    Developed by Yago López
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://github.com/YagoLopez/binoovo"
+                    target="_blank">
+                    🖥GitHub Project Address
+                  </a>
+                </div>
               </Typography>
+            </p>
+            <p>
+              <Typography use="caption"></Typography>
             </p>
             <div
               className={css.fabBtn}
