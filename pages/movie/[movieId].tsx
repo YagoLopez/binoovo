@@ -18,7 +18,7 @@ import { Tooltip } from '@rmwc/tooltip'
 import { Button } from '@rmwc/button'
 import { TopBar } from '../../components/TopBar'
 import {
-  getMovieDetailUrl,
+  getUrlMovieDetail,
   getVideoUrl,
   onAddFavorite,
   onClickMovieDetail,
