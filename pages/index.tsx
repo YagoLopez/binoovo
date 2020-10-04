@@ -79,7 +79,11 @@ const Index = () => {
               </a>
             </div>
             <p>
-              <Typography use="caption">Developed by Yago López</Typography>
+              <Typography use="caption">
+                <a href="https://yagolopez.js.org" target="_blank">
+                  Developed by Yago López
+                </a>
+              </Typography>
             </p>
             <div
               className={css.fabBtn}
