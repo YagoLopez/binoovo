@@ -37,10 +37,6 @@
   margin-top: 25px;
 }
 
-.link {
-  font-size: small;
-}
-
 .movieCardContent {
   padding: 0 1rem 1rem 1rem;
 }
@@ -92,4 +88,19 @@
 
 .movieDetailBtn {
   margin-left: 8px;
+}
+
+.link {
+  font-family: monospace;
+  font-size: medium;
+  text-decoration: none;
+  color: grey;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.footerLinksContainer {
+  margin: 1rem;
 }
