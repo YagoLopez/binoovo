@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import css from '../public/styles/styles.module.css'
+import css from '../public/styles/global.module.css'
 
 export const NoResults = ({ message }) => {
   const router = useRouter()
@@ -8,7 +8,11 @@ export const NoResults = ({ message }) => {
   return (
     <div className={css.centerHorVer}>
       <p data-cy="no-results-msg">{message}</p>
-      <div><a href="#" onClick={onGoBack}>⇦ Go Back</a></div>
+      <div>
+        <a href="#" onClick={onGoBack}>
+          ⇦ Go Back
+        </a>
+      </div>
     </div>
   )
 }

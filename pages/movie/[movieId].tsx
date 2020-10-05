@@ -27,7 +27,7 @@ import { MovieImage } from '../../components/movie/MovieImage'
 import { MovieRevenue } from '../../components/movie/MovieRevenue'
 import { MovieDialog } from '../../components/movie/MovieDialog'
 import { CONST } from '../../constants'
-import css from '../../public/styles/styles.module.css'
+import css from '../../public/styles/global.module.css'
 
 const MovieDetail = () => {
   const router = useRouter()
@@ -102,14 +102,14 @@ const MovieDetail = () => {
             </CardPrimaryAction>
             <CardActions>
               <CardActionButtons>
-                {videos.length > 0 &&
+                {videos.length > 0 && (
                   <Button
                     className={css.movieDetailBtn}
                     raised
                     onClick={() => router.push(`${movieId}#${videos[0].key}`)}>
                     Watch Video
                   </Button>
-                }
+                )}
                 <Button
                   className={css.movieDetailBtn}
                   raised
@@ -127,11 +127,11 @@ const MovieDetail = () => {
             </CardActions>
           </Card>
         </div>
-        {videos.length > 0 &&
+        {videos.length > 0 && (
           <MovieDialog
             open={isDialogOpen}
             url={getVideoUrl(videos[0].key)}></MovieDialog>
-        }
+        )}
       </>
     )
   }
