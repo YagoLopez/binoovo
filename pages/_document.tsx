@@ -6,6 +6,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
+            rel="preconnect"
             href="/font/roboto-v20-latin-regular.woff2"
             as="font"
             crossOrigin="anonymous"
