@@ -1,4 +1,4 @@
-![](https://camo.githubusercontent.com/687a8ae8d15f9409617d2cc5a30292a884f6813a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64655f7374796c652d70726574746965722d6666363962342e7376673f7374796c653d666c61742d737175617265)
+[![Prettier](https://camo.githubusercontent.com/687a8ae8d15f9409617d2cc5a30292a884f6813a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64655f7374796c652d70726574746965722d6666363962342e7376673f7374796c653d666c61742d737175617265)](https://github.com/prettier/prettier)
 
 # Binoovo Movie Search App
 
@@ -29,7 +29,7 @@ using the GraphQL endpoint: https://tmdb-graphql.com
 
 - Use of [CSS modules](https://github.com/css-modules/css-modules)
 
-- [Lazy loading images](https://web.dev/lazy-loading/) (Better performance and UX)
+- [Lazy loading images](https://web.dev/lazy-loading/) for better performance and UX
 
 - React [Material Design](https://rmwc.io/)
 
@@ -42,7 +42,7 @@ using the GraphQL endpoint: https://tmdb-graphql.com
   
 - [Open and run project](https://811sg.sse.codesandbox.io/):
   **Note**: This option will run the project in a Docker container in development mode whitout
-  build optimizations. It will be a bit slower than the production version  
+  optimizations. It will be a bit slower than the production version  
   
   [![Edit YagoLopez/binoovo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/binoovo-movie-search-811sg)
 

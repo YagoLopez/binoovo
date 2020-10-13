@@ -28,6 +28,4 @@ export const getUrlMovieDetail = (movieId: string, title: string): string => {
   return `${CONST.MOVIEDB_DETAIL_BASE_URL}/${movieId}-${sluggedTitle}`
 }
 
-export const openExternalLink = (url: string): void => {
-  window.open(url)
-}
+export const openExternalLink = (url: string) => window.open(url)
