@@ -1,5 +1,4 @@
 import withApollo from '../../lib/apollo'
-import { useState } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { useRouter } from 'next/router'
 import { NoResults } from '../../components/NoResults'
@@ -18,7 +17,6 @@ import { Tooltip } from '@rmwc/tooltip'
 import { Button } from '@rmwc/button'
 import { TopBar } from '../../components/TopBar'
 import {
-  getUrlMovieDetail,
   getVideoUrl,
   onAddFavorite,
   onClickMovieDetail,
