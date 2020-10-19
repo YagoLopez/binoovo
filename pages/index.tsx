@@ -71,7 +71,7 @@ const Index = () => {
             </div>
             <div>
               <a
-                href="https://tmdb-graphql.com/"
+                href={CONST.URL_TMDB_GRAPHQL_API}
                 target="_blank"
                 className={css.link}
                 rel="noopener noreferrer">
@@ -81,7 +81,7 @@ const Index = () => {
             <div className={css.footerLinksContainer}>
               <div>
                 <a
-                  href="https://yagolopez.js.org"
+                  href={CONST.URL_YAGO_LOPEZ}
                   target="_blank"
                   className={css.link}
                   rel="noopener noreferrer">
@@ -90,7 +90,7 @@ const Index = () => {
               </div>
               <div>
                 <a
-                  href="https://github.com/YagoLopez/binoovo"
+                  href={CONST.URL_GITHUB_PROJECT}
                   target="_blank"
                   className={css.link}
                   rel="noopener noreferrer">
@@ -104,7 +104,7 @@ const Index = () => {
               <Fab
                 icon="assessment"
                 theme={['primaryBg', 'onPrimary']}
-                title="Audit Report"
+                title={CONST.FAB_BTN_TITLE}
               />
               <div className={css.fabBtnText}>Audit</div>
             </div>
