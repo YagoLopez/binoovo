@@ -40,7 +40,7 @@ using the GraphQL endpoint: https://tmdb-graphql.com
   
   ![Scan QRcode](binoovo-qrcode.png)
   
-- [Open and run project](https://lj9gh.sse.codesandbox.io/):
+- [Run app in development mode](https://lj9gh.sse.codesandbox.io/):
   **Note**: This option will run the project in a Docker container in development mode whitout
   optimizations. It will be a bit slower than the production version  
   
