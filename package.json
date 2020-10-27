@@ -29,7 +29,7 @@
     "slug": "^3.5.1"
   },
   "devDependencies": {
-    "@types/node": "14.11.8",
+    "@types/node": "14.14.5",
     "@types/react": "16.9.52",
     "cypress": "5.3.0",
     "prettier": "2.1.2",
