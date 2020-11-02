@@ -26,9 +26,9 @@ describe('Test search functionality', () => {
 
 describe('Test pagination', () => {
 
-  it('Should return 7 pages for search term:"' + searchTerm1 +'"', () => {
+  it('Should show total number of pages for:"' + searchTerm1 +'"', () => {
     cy.visit('/movies-search/'+ searchTerm1 +'?page=1')
-    cy.get('[data-cy=total-pages]').should('have.text', 'Total pages: 7')
+    cy.get('[data-cy=total-pages]').should('contain.text', 'Total pages')
   })
 
   it('Should be disabled previous button for first page', () => {
