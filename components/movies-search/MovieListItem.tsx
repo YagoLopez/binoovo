@@ -4,14 +4,22 @@ import {
   ListItemMeta,
   ListItemPrimaryText,
   ListItemSecondaryText,
-  ListItemText
+  ListItemText,
 } from '@rmwc/list'
 import { LazyLoadImage } from '@tjoskar/react-lazyload-img'
+import Image from 'next/image'
 import { LAZY_IMG_STYLE } from '../../public/styles/lazy-img-style'
 
 export const MovieListItem = ({ movieData, baseUrl, imgSize }) => {
-
-  const { posterPath, id, title, releaseDate, revenue, originalLanguage, popularity } = movieData
+  const {
+    posterPath,
+    id,
+    title,
+    releaseDate,
+    revenue,
+    originalLanguage,
+    popularity,
+  } = movieData
 
   const getImageUrl = (posterPath: string): string => {
     if (!posterPath) return '/imgFail.jpg'
@@ -26,16 +34,19 @@ export const MovieListItem = ({ movieData, baseUrl, imgSize }) => {
   return (
     <Link href="/movie/[id]" as={`/movie/${id}`}>
       <ListItem>
-        <LazyLoadImage
-          width="92px"
-          height="92px"
-          style={LAZY_IMG_STYLE}
-          defaultImage='/imgPlaceholder.png'
-          image={getImageUrl(posterPath)}
-          alt="" />
+        <div style={LAZY_IMG_STYLE}>
+          <Image
+            src={getImageUrl(posterPath)}
+            width="92"
+            height="92"
+            alt="Profile Picture"
+          />
+        </div>
         <ListItemText>
-          <ListItemPrimaryText>{ title }</ListItemPrimaryText>
-          <ListItemSecondaryText>Popularity: { popularity } %</ListItemSecondaryText>
+          <ListItemPrimaryText>{title}</ListItemPrimaryText>
+          <ListItemSecondaryText>
+            Popularity: {popularity} %
+          </ListItemSecondaryText>
         </ListItemText>
         <ListItemMeta icon="chevron_right" />
       </ListItem>
