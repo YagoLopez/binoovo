@@ -2465,11 +2465,6 @@
     ejs "^2.6.1"
     magic-string "^0.25.0"
 
-"@tjoskar/react-lazyload-img@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@tjoskar/react-lazyload-img/-/react-lazyload-img-1.2.3.tgz#68e5d32c9c11cb183829e471316d7b42f83b4ea4"
-  integrity sha512-nzEDNE+7U0y2AkY9xZjIa5das2jAkGsREB/40k1t/uA0D4jbLr7CG6gXSSyj7++Ofna1x72sWGwjI8KLWzw77w==
-
 "@types/accepts@*":
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/@types/accepts/-/accepts-1.3.5.tgz#c34bec115cfc746e04fe5a059df4ce7e7b391575"
