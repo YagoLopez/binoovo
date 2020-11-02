@@ -6,7 +6,6 @@ import {
   ListItemSecondaryText,
   ListItemText,
 } from '@rmwc/list'
-import { LazyLoadImage } from '@tjoskar/react-lazyload-img'
 import Image from 'next/image'
 import { LAZY_IMG_STYLE } from '../../public/styles/lazy-img-style'
 
