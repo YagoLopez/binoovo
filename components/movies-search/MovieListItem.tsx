@@ -20,10 +20,8 @@ export const MovieListItem = ({ movieData, baseUrl, imgSize }) => {
     popularity,
   } = movieData
 
-  const getImageUrlListItem = (posterPath: string): string => {
-    if (!posterPath) return '/imgFail.jpg'
-    return baseUrl + imgSize + posterPath
-  }
+  const getImageUrlListItem = (posterPath: string): string =>
+    !posterPath ? '/imgFail.jpg' : `${baseUrl}${imgSize}${posterPath}`
 
   const getReleaseDate = (releaseDate: string): string => {
     if (!releaseDate) return 'Release date not available'
