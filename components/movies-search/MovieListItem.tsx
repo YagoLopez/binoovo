@@ -20,7 +20,7 @@ export const MovieListItem = ({ movieData, baseUrl, imgSize }) => {
     popularity,
   } = movieData
 
-  const getImageUrl = (posterPath: string): string => {
+  const getImageUrlListItem = (posterPath: string): string => {
     if (!posterPath) return '/imgFail.jpg'
     return baseUrl + imgSize + posterPath
   }
@@ -35,7 +35,7 @@ export const MovieListItem = ({ movieData, baseUrl, imgSize }) => {
       <ListItem>
         <div style={LAZY_IMG_STYLE}>
           <Image
-            src={getImageUrl(posterPath)}
+            src={getImageUrlListItem(posterPath)}
             width="92"
             height="92"
             alt="Profile Picture"
