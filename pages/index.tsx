@@ -17,6 +17,8 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const onSearchMovie = (evt: FormEvent) => {
+    alert(CONST.URL_TMDB_GRAPHQL_API + ' API is down at this moment')
+    return
     evt.preventDefault()
     searchterm.trim()
     if (searchterm?.length > 0) {

@@ -20,6 +20,7 @@ export const MovieListItem = ({ movieData, baseUrl, imgSize }) => {
     popularity,
   } = movieData
 
+  // todo: refactor
   const getImageUrlListItem = (posterPath: string): string =>
     !posterPath ? '/imgFail.jpg' : `${baseUrl}${imgSize}${posterPath}`
 
