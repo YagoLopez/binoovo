@@ -11,7 +11,9 @@
     "cypress:run": "cypress open",
     "test": "start-server-and-test dev:test http://localhost:4000 cypress:test",
     "update:check": "echo 'Checking for outdated dependencies...' & npx npm-check-updates",
-    "update:make": "npx npm-check-updates -u && yarn install"
+    "update:make": "npx npm-check-updates -u && yarn install",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
@@ -25,7 +27,8 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "rmwc": "^6.1.4",
-    "slug": "^4.0.2"
+    "slug": "^4.0.2",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/node": "14.14.6",
@@ -34,5 +37,6 @@
     "prettier": "2.1.2",
     "start-server-and-test": "^1.11.5",
     "typescript": "^4.0.5"
-  }
+  },
+  "snyk": true
 }
